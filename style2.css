@@ -1,7 +1,25 @@
+/* GridLayout */
+
+.GridLayout-Example{
+    width: min-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.square{
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, crimson, #3b003f); 
+    box-shadow: inset 10px black;
+}
+
+
+/* LinearLayout */
+
 .LinearLayout-square {
     width: 50px;
     height: 50px;
-    background: linear-gradient(45deg, crimson, yellowgreen);
+    background: linear-gradient(45deg, crimson, #3b003f); 
 }
 
 .LinearLayout-Vertical {

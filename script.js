@@ -137,6 +137,36 @@ function renderPost() {
     })
 }
 
+let totalItems2 = 0
+function renderPostSimple() {
+    const mainpage = Array.from(document.querySelectorAll(".postSimple"))
+
+    mainpage.map(el => {
+        // const tg = document.querySelector("#tg")
+        const url = el.getAttribute('src')
+        if (url == undefined) return
+        fetch(url)
+            .then(e => e.text())
+            .then(e => {
+                const d = document.createElement('div')
+                d.innerHTML = e
+                // d.classList.add('bg1')
+                const content = d.outerHTML
+                el.appendChild(d)
+                // renderCodes()
+                // renderPostCode()
+                // renderPostCode()
+
+                ++totalItems2
+                if (mainpage.length == totalItems2) {
+                    renderPostCode()
+                    buttonsEventSwitchOptionWindow()
+                }
+
+            })
+    })
+}
+
 function renderPostCode() {
     const mainpage = Array.from(document.querySelectorAll(".code"))
 
@@ -182,20 +212,21 @@ function renderPostCode() {
 
 renderComponents()
 renderPost()
+renderPostSimple()
 // renderPostCode()
 
 
 
 function buttonsEventSwitchOptionWindow() {
- 
+
     const btnOptions = Array.from(document.querySelectorAll(".btnOption"))
 
-    function resetStyleButtons(btn) { 
+    function resetStyleButtons(btn) {
         const buttons = Array.from(btn.parentElement.querySelectorAll(".btn"))
 
         buttons.map(e => {
             e.classList.remove('btn-selected')
-        }) 
+        })
     }
 
     btnOptions.map((btn, i) => {
@@ -203,7 +234,7 @@ function buttonsEventSwitchOptionWindow() {
         resetStyleButtons(btn)
 
         btn.parentElement.querySelector('button').classList.add('btn-selected')
- 
+
         btn.addEventListener('click', (e) => {
 
             resetStyleButtons(btn)
@@ -226,3 +257,84 @@ function buttonsEventSwitchOptionWindow() {
 
     // btnOptions[0].click()
 }
+
+// render codes <code class=...
+function renderCodeTag() {
+    const mainpage = Array.from(document.querySelectorAll("code"))
+  
+    mainpage.map(el => {
+
+        if(el.parentElement.tagName == "PRE") return
+        
+        console.log(el)
+        el.tagName = "outro"
+
+        const className = el.className
+
+        const pre = document.createElement("pre")
+        const code = document.createElement("code")
+
+        code.innerHTML = el.innerHTML.trim()
+        pre.classList.add('language-' + className)
+        // pre.classList.add('bg1')
+
+        // if(el.classList.contains('nobg')){
+            // pre.classList.parentElement.remove('bg1')
+            // el.parentElement.classList.remove('post')
+        // }
+
+        // console.log('el')
+        // console.log(el.parentElement.classList.remove('bg1'))
+
+        pre.appendChild(code)
+
+
+
+        el.replaceWith(pre)
+
+        Prism.highlightAll()
+        
+
+
+        // const tg = document.querySelector("#tg")
+        // const url = el.getAttribute('src')
+        // const lang = el.getAttribute('lang')
+        // if (url == undefined) return
+        // fetch(url)
+        //     .then(e => e.text())
+        //     .then(e => {
+
+        //         const d = document.createElement('div')
+        //         // d.innerHTML = e
+        //         d.classList.add('bg1')
+        //         d.classList.add('post')
+        //         // const content = d.outerHTML 
+        //         // el.appendChild(d) 
+        //         // renderCodes()
+
+
+        //         const pre = document.createElement('pre')
+        //         const code = document.createElement('code')
+
+        //         code.className = "language-" + lang
+        //         // el.innerHTML = e.replace(/</g, "&lt")
+        //         code.innerHTML = e.replace(/</g, "&lt")
+        //         // code.innerHTML = e
+
+        //         pre.appendChild(code)
+        //         d.appendChild(pre)
+
+        //         // console.log('pre')
+        //         // console.log(pre)
+
+        //         el.appendChild(d)
+
+        
+
+        // })
+    })
+}
+
+setTimeout(() => {
+    renderCodeTag()
+}, 500)

@@ -1,0 +1,334 @@
+<!-- Numeros -->
+
+
+<!-- <code>Java</code> -->
+
+<h1>Tipos de variáveis (primitivo)</h1>
+<section class="post bg1">
+<code class="java">
+int idade = 20;
+double altura = 1.65;
+float peso = 60.5f;
+char inicial = 'M';
+boolean ehJogador = true;
+byte quantidade = 5;
+</code>
+</section>
+
+<h1>Tipos de variáveis</h1>
+<section class="post bg1">
+<code class="java">
+String nome = "Maria";
+Integer idade = 20;
+Double altura = 1.65;
+Float peso = 60.5f;
+Character inicial = 'M';
+Boolean ehJogador = true;  
+Byte quantidade = 5; 
+</code>
+</section>
+
+</code>
+</section>
+
+<h1>Operadores Aritiméticos</h1> 
+<section class="post bg1">
+<code class="java">
++	// Adição	                10 + 5 = 15
+-	// Subtração	            10 - 5 = 5
+*	// Multiplicação	        10 * 5 = 50
+/	// Divisão	                10 / 5 = 2
+%	// Módulo (Resto)  (resto)	10 % 3 = 1
+</code>
+</section>
+ 
+<h1>Operadores relacionais</h1> 
+<section class="post bg1">
+<code class="java">
+==  // igual
+!=  // diferente
+>   // maior que
+<   // menor que
+=   // maior ou igual
+<=  // menor ou igual
+
+&&  // E
+||  // OU
+
+!   // NÃO
+</code>
+</section>
+ 
+
+<h1>Estrutura de decisão</h1>
+<section class="post bg1">
+
+<!-- exemplo 1 --> 
+<code class="java">
+int idade = 20;
+
+if (idade >= 18) {
+    System.out.println("Maior de idade");
+}
+</code>
+</section>
+
+<section class="post bg1">
+<!-- exemplo 2 --> 
+<code class="java">
+int idade = 16;
+
+if (idade >= 18) {
+    System.out.println("Maior de idade");
+} else {
+    System.out.println("Menor de idade");
+}
+</code>
+</section>
+
+<section class="post bg1">
+<!-- exemplo 3 --> 
+<code class="java">
+int nota = 8;
+
+if (nota >= 9) {
+    System.out.println("Excelente");
+} else if (nota >= 7) {
+    System.out.println("Aprovado");
+} else if (nota >= 5) {
+    System.out.println("Recuperação");
+} else {
+    System.out.println("Reprovado");
+}
+
+// nota >= 9 → Excelente
+// nota >= 7 → Aprovado
+// nota >= 5 → Recuperação
+// senão     → Reprovado
+</code>
+</section>
+
+<section class="post bg1">
+<code class="java">
+String login = "admin";
+String password = "1234";
+
+if (login.equals("admin") && password.equals("1234")) {
+    System.out.println("Login realizado com sucesso!");
+} else {
+    System.out.println("Login ou senha incorretos.");
+}
+</code>
+</section>
+
+
+<section class="post bg1">
+<code class="java">
+int opcao = 2;
+
+switch (opcao) {
+    case 1: System.out.println("Cadastrar"); break;
+    case 2: System.out.println("Consultar"); break;
+    case 3: System.out.println("Excluir"); break;
+    default: System.out.println("Opção inválida");
+}
+</code>
+</section>
+ 
+<h1>Estrutura de repetição</h1> 
+<section class="post bg1">
+<code class="java">
+for (int i = 1; i <= 10; i++) {
+    System.out.println(i);
+} 
+</code>  
+</section>
+
+<section class="post bg1">
+<code class="java">
+for (int i = 0; i < 3; i++) {
+    for (int j = 0; j < 3; j++) {
+        System.out.println("i = " + i + ", j = " + j);
+    }
+}
+</code>
+</section>
+
+<section class="post bg1">
+<code class="java">
+while (condição) {
+    // código que será repetido
+}
+</code>
+</section>
+
+<section class="post bg1">
+<code class="java">
+int contador = 1;
+
+while (contador <= 5) {
+    System.out.println(contador);
+    contador++;
+}
+</code>
+</section>
+
+<section class="post bg1">
+<code class="java">
+int senha = 1234;
+int tentativa = 0;
+
+while (tentativa != senha) {
+    tentativa = 1234;
+}
+
+System.out.println("Senha correta!");
+</code>
+</section>
+
+<h1>Arrays</h1>
+<p>Um array é uma estrutura que guarda vários valores do mesmo tipo em uma única variável.</p>
+<section class="post bg1">
+<code class="java">
+int[] numeros = {10, 20, 30, 40, 50};
+
+ou
+
+int[] numeros = new int[]{10, 20, 30, 40, 50};
+</code>
+</section>
+
+<!-- parte -->
+<section class="post bg1">
+<h2>Percorrendo um array</h2>
+<code class="java">
+int[] numeros = {10, 20, 30, 40};
+
+for (int i = 0; i < numeros.length; i++) {
+    System.out.println(numeros[i]);
+}
+
+// ou
+
+for (int numero : numeros) {
+    System.out.println(numero);
+}
+</code>
+</section>
+
+
+
+<!-- post -->
+<section class="post bg1">
+<h2>List</h2>
+<code class="java"> 
+List → coleção ordenada
+Set → coleção sem duplicatas
+Map → chave e valor
+Queue → fila 
+</code>
+</section>
+
+<!-- post -->
+<section class="post bg1">
+<h2>Mutabilidade</h2>
+<code class="java"> 
+// Lista imutável
+List&lt;String> names = List.of("Dog", "Cat", "Bird", "Dog");
+
+// Lista mutável
+List&lt;String> names = new ArrayList<>(List.of("Dog", "Cat", "Bird", "Dog"));
+
+// Acessar elemento
+names.get(0);        // "Dog"
+names.get(1);        // "Cat"
+names.size();        // 4
+names.isEmpty();     // false
+
+// Pesquisa
+names.contains("Dog");       // true
+names.indexOf("Cat");      // 1
+names.indexOf("Bear");       // -1
+names.lastIndexOf("Dog");    // 0
+
+// Criar nova lista
+List&lt;String> upper = names.stream().map(String::toUpperCase).toList();
+
+</code>
+</section>
+
+<!-- post -->
+<section class="post bg1">
+<h2>Hashmap</h2>
+<code class="java"> 
+HashMap&lt;String, Integer> animals = new HashMap<>();
+  
+animals.put("Dog", 4);
+animals.put("Cat", 4);
+animals.put("Bird", 2);
+animals.put("Snake", 0);
+
+// {Snake=0, Bird=2, Cat=4}
+
+animals.get("Dog"); // 4 
+animals.put("Dog", 3); // alteração
+animals.remove("Dog"); // remove
+</code>
+</section>
+
+<!-- post -->
+<h1>Classe</h1>
+<p>Uma classe em Java é um molde para criar objetos.</p>
+<section class="post bg1">
+<code class="java"> 
+public class NomeDaClasse { 
+    // atributos
+    // construtor
+    // métodos
+}
+</code>
+</section>
+
+<!-- post -->
+<p>Abaixo uma classe completa.</p>
+<section class="post bg1">
+<code class="java"> 
+public class Pessoa {
+
+    // Atributos
+    String nome;
+    int idade;
+
+    // Construtor
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    // Método
+    public void apresentar() {
+        System.out.println("Olá, meu nome é " + nome);
+        System.out.println("Tenho " + idade + " anos.");
+    }
+}
+</code>
+</section>
+
+<!-- post -->
+<p>Criando um objeto da classe Pessoa.</p>
+<section class="post bg1">
+<code class="java"> 
+ 
+Pessoa pessoa1 = new Pessoa("Ana", 20);
+Pessoa pessoa2 = new Pessoa("Renata", 20);
+Pessoa pessoa3 = new Pessoa("Ana", 20);
+
+pessoa1.apresentar();
+pessoa1.apresentar();
+pessoa1.apresentar();
+ 
+</code>
+</section>
+
+
+

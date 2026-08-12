@@ -50,11 +50,26 @@ h5 {
     margin-bottom: 10px;
 }
 
-p{
-    color: var(--text);
+h1{
+    border-bottom: solid 1px var(--grayD);
+    padding-top: 1em;
+    padding-bottom: 0.3em;
 }
 
-hr{
+h2,
+h3,
+h4,
+h5{
+    padding-top: 1em;
+}
+
+
+p {
+    color: var(--text);
+    padding: 1em;
+}
+
+hr {
     border: none;
     border-bottom: 1px var(--grayC) solid;
     /* width: 300px; */
@@ -63,7 +78,7 @@ hr{
 }
 
 /* BTN */
-.btn{
+.btn {
     border: solid 1px var(--lime);
     padding: 3px 20px;
     margin: 5px 0;
@@ -77,15 +92,16 @@ hr{
 .btn:hover {
     color: var(--lime);
     text-decoration: underline;
-    cursor: pointer; 
-    
+    cursor: pointer;
+
 }
 
-.btn-selected{
+.btn-selected {
     background-color: var(--lime);
     color: var(--grayA);
 }
-.btn-selected:hover{
+
+.btn-selected:hover {
     /* background-color: var(--lime); */
     color: var(--grayB);
 }
@@ -102,7 +118,9 @@ input[name=option-btn]:checked + .btn{
 .options .jetpack { display: none; }
 .options .java { display: none; } */
 
-.optionItem{display: none;}
+.optionItem {
+    display: none;
+}
 
 /* .options label:has(input[value="xml"]:checked) ~ .xml{  display: block; }
 .options label:has(input[value="jetpack"]:checked) ~ .jetpack{  display: block; }
@@ -125,8 +143,8 @@ input[name=option-btn]:checked + .btn{
 }
 
 .bg1 {
-    padding: 1em;
-    background: rgb(from var(--grayB) r g b / 30%);
+    padding: 1em  !important;
+    background: rgb(from var(--grayB) r g b / 30%)  !important;
 }
 
 .post,
@@ -140,6 +158,19 @@ input[name=option-btn]:checked + .btn{
     margin-top: 1em;
     margin-bottom: 1em;
 }
+
+.postSimple {
+    width: 900px;
+    max-width: 100%;
+    margin: auto;
+    padding: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+/* .post:last-child, .postSimple:last-child{
+    margin-bottom: 10em;
+} */
 
 
 /* MenuTop */
@@ -243,10 +274,26 @@ input[name=option-btn]:checked + .btn{
     transition: 0.5s;
 }
 
-.e-xml{
+.e-xml {
     /* display: none; */
 }
 
-.e-jetpack{
+.e-jetpack {
     display: none;
+}
+
+/* imagezoom */
+.imageZoom {
+    display: block;
+    /* padding: 1em 0; */
+}
+
+.imageZoom input{display: none}
+
+.imageZoom input:checked + img {
+    max-width: 100%;
+}
+
+.imageZoom input + img {
+    max-width: 100px;
 }
