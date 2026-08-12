@@ -1,0 +1,17 @@
+<Button
+    android:id="@+id/btnEntrar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="Entrar"
+    android:textSize="16sp"
+    android:textColor="@android:color/white"
+    android:backgroundTint="#2196F3" 
+    android:drawableStart="@drawable/ic_login"
+/>
+
+<!-- 
+    android:drawableStart="@drawable/ic_login"
+    android:drawableEnd="@drawable/ic_arrow"
+    android:drawableTop="@drawable/ic_login"
+    android:drawableBottom="@drawable/ic_arrow"
+ -->

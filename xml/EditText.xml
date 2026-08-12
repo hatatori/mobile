@@ -1,0 +1,21 @@
+<EditText
+    android:id="@+id/editTextText2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:inputType="text"
+    android:hint="Digite seu nome"
+/>
+  
+<!-- 
+    ems             - Define aproximadamente a largura do campo
+    inputType	    - Define o tipo de entrada/teclado
+    hint	        - Mostra um texto de orientação enquanto está vazio
+ 
+    inputType
+        text               - texto
+        number             - números
+        phone              - telefone
+        textEmailAddress   - e-mail
+        textPassword       - senha
+ -->
