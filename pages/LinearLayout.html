@@ -1,5 +1,6 @@
 <h1>&lt;LinearLayout/></h1>
-<p>`LinearLayout` é uma visualização em grupo que alinha todos os filhos em uma única direção vertical ou horizontal. Você pode especificar a direção do layout com o `android:orientation` atributo.</p>
+<p>`LinearLayout` é uma visualização em grupo que alinha todos os filhos em uma única direção vertical ou horizontal.
+    Você pode especificar a direção do layout com o `android:orientation` atributo.</p>
 
 
 <!-- <pre><code class="language-xml" src="./xml/LinearLayout.xml" ></code></pre>
@@ -7,40 +8,34 @@
 
 
 <section class="post bg1">
-<!-- <h2>Exemplo</h2> -->
-<section class="options">
 
-    <button class="btn btn-selected btnOption" value="xml">XML</button>
-    <button class="btn btnOption" value="jetpack">JETPACK</button>
-
-    <div class="optionItem xml" style="display: block;">
-        <h2>XML</h2>
-        <main lang="xml" class="code" src="./xml/LinearLayout.xml"></main>
-    </div>
-
-    <div class="optionItem jetpack">
-        <h2>JETPACK COMPOSE</h2>
-        <main lang="kotlin" class="code" src="./jetpack/LinearLayout.xml"></main>
-    </div> 
-
-</section> 
-
-
-<h2>Orientation</h2>
+    <section>
+        <button class="choice-btn btn-selected">XML</button>
+        <button class="choice-btn">JETPACK</button>
+        <section class="choice choice-0">
+            <div><main lang="xml" class="code" src="./xml/LinearLayout.xml"></main></div>
+            <div><main lang="kotlin" class="code" src="./jetpack/LinearLayout.kt"></main></div>
+        </section>
+    </section>
  
-<h3>Vertical</h3>
-<section class="LinearLayout">
-    <div class="LinearLayout-square"></div>
-    <div class="LinearLayout-square"></div>
-    <div class="LinearLayout-square"></div>
-</section>
 
-<h3>Horizontal</h3>
-<section class="LinearLayout LinearLayout-Horizontal">
-    <div class="LinearLayout-square"></div>
-    <div class="LinearLayout-square"></div>
-    <div class="LinearLayout-square"></div>
-</section>
-</section>
+    <h2>Orientation</h2>
 
+    <h3>Vertical</h3>  
+    <section class="LinearLayout LinearLayout-Vertical">
+        <div class="LinearLayout-square"><img src="./imgs/rato.jpg"></div>
+        <div class="LinearLayout-square"><img src="./imgs/tartaruga.jpg"></div>
+        <div class="LinearLayout-square"><img src="./imgs/mico.jpg"></div>
+    </section>
 
+    <h3>Horizontal</h3>
+    <section class="LinearLayout LinearLayout-Horizontal">
+        <div class="LinearLayout-square"><img src="./imgs/rato.jpg"></div>
+        <div class="LinearLayout-square"><img src="./imgs/tartaruga.jpg"></div>
+        <div class="LinearLayout-square"><img src="./imgs/mico.jpg"></div>
+    </section>
+ 
+
+    
+
+</section>

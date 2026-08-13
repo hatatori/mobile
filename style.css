@@ -84,7 +84,7 @@ hr {
 }
 
 /* BTN */
-.btn {
+.btn, .choice-btn {
     border: solid 1px var(--lime);
     padding: 3px 20px;
     margin: 5px 0;
@@ -95,7 +95,7 @@ hr {
     color: var(--lime);
 }
 
-.btn:hover {
+.btn:hover, .choice-btn:hover {
     color: var(--lime);
     text-decoration: underline;
     cursor: pointer;
@@ -316,4 +316,63 @@ input[name=option-btn]:checked + .btn{
 /* highlight */
 .highlight{
     color: var(--blue);
+}
+
+/* CHOICE - ao clica no botão escolha a tela a  ser exibida */
+ 
+.choice > *{ 
+    display: none; 
+}
+
+.choice-0 > *:nth-child(1){ display: block !important; } 
+.choice-1 > *:nth-child(2){ display: block !important; } 
+.choice-2 > *:nth-child(3){ display: block !important; } 
+.choice-3 > *:nth-child(4){ display: block !important; } 
+.choice-4 > *:nth-child(5){ display: block !important; } 
+.choice-5 > *:nth-child(6){ display: block !important; } 
+.choice-6 > *:nth-child(7){ display: block !important; } 
+.choice-7 > *:nth-child(8){ display: block !important; } 
+.choice-8 > *:nth-child(9){ display: block !important; } 
+.choice-9 > *:nth-child(10){ display: block !important; }
+
+/* .choice-0{ grid-template-rows: 1fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr !important; } 
+.choice-1{ grid-template-rows: 0fr 1fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr !important; } 
+.choice-2{ grid-template-rows: 0fr 0fr 1fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr !important; } 
+.choice-3{ grid-template-rows: 0fr 0fr 0fr 1fr 0fr 0fr 0fr 0fr 0fr 0fr !important; } 
+.choice-4{ grid-template-rows: 0fr 0fr 0fr 0fr 1fr 0fr 0fr 0fr 0fr 0fr !important; } 
+.choice-5{ grid-template-rows: 0fr 0fr 0fr 0fr 0fr 1fr 0fr 0fr 0fr 0fr !important; } 
+.choice-6{ grid-template-rows: 0fr 0fr 0fr 0fr 0fr 0fr 1fr 0fr 0fr 0fr !important; } 
+.choice-7{ grid-template-rows: 0fr 0fr 0fr 0fr 0fr 0fr 0fr 1fr 0fr 0fr !important; } 
+.choice-8{ grid-template-rows: 0fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr 1fr 0fr !important; } 
+.choice-9{ grid-template-rows: 0fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr 0fr 1fr !important; } */
+
+/* .choice-0 > *{ overflow: hidden;  }
+.choice-1 > *{ overflow: hidden;  }
+.choice-2 > *{ overflow: hidden;  }
+.choice-3 > *{ overflow: hidden;  }
+.choice-4 > *{ overflow: hidden;  }
+.choice-5 > *{ overflow: hidden;  }
+.choice-6 > *{ overflow: hidden;  }
+.choice-7 > *{ overflow: hidden;  }
+.choice-8 > *{ overflow: hidden;  }
+.choice-9 > *{ overflow: hidden;  } */
+
+
+/* 
+.choice-0 > *:nth-child(1){ grid-template-rows: 0 1fr 0 }
+.choice-1 > *:nth-child(2){ grid-template-rows: 0 0 1fr; }
+.choice-2 > *:nth-child(3){ grid-template-rows: 1fr; }
+.choice-3 > *:nth-child(4){ grid-template-rows: 1fr; }
+.choice-4 > *:nth-child(5){ grid-template-rows: 1fr; }
+.choice-5 > *:nth-child(6){ grid-template-rows: 1fr; }
+.choice-6 > *:nth-child(7){ grid-template-rows: 1fr; }
+.choice-7 > *:nth-child(8){ grid-template-rows: 1fr; }
+.choice-8 > *:nth-child(9){ grid-template-rows: 1fr; } */
+
+/* LIST STYLE */
+.list-style-1{
+    list-style: none;
+}
+.list-style-1 li{
+    padding: 5px 0;
 }

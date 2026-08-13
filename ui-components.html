@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./style2.css">
     <script defer src="./script.js"></script>
-
+    <!-- 
+    <script defer>
+        renderCodeTag()
+    </script> -->
 
 </head>
 
@@ -30,25 +33,52 @@
     </main> -->
 
 
-
     <!-- parte 1 - COMPONENTS -->
-    <main class="components MenuTop" src="./components/MenuTop.html"></main>
+    <main class="components" src="./components/MenuTop.html"></main>
     <main class="components" src="./components/MenuSide.html"></main>
- 
+
+    <section class="post">
+        <h1>UI components</h1>
+        <p>São os elementos visuais que você coloca na tela de um aplicativo para o usuário ver e interagir.</p>
+    </section>
+    <section class="post bg1">
+        <ul class="list-style-1">
+            <li>🔘 Button -> botão</li>
+            <li>📝 EditText / TextInput -> campo para digitar</li>
+            <li>☑️ CheckBox -> caixa de seleção</li>
+            <li>🔘 RadioButton -> seleção única</li>
+            <li>🎚️ Switch -> liga/desliga</li>
+            <li>📋 RecyclerView -> lista de itens</li>
+            <li>🖼️ ImageView -> imagem</li>
+            <li>📑 TextView -> texto</li>
+            <li>🧭 Toolbar -> barra superior</li>
+            <li>🪟 Dialog -> janela de diálogo</li>
+        </ul>
+        <img width="200" height="200" src="./imgs/buttons.svg">
+        <img width="200" height="200" src="./imgs/checkbox.svg">
+    </section>
+    <section class="post bg1">
+
+        <!-- parte 1 -->
+        <section>
+            <button class="choice-btn btn-selected">Material 2</button>
+            <button class="choice-btn">Material 3</button>
+            <p>/res/values/themes.xml</p>
+            <section class="choice choice-0">
+                <div class="bg1"><code class="xml">&lt;style name="Theme.MyApp" parent="Theme.MaterialComponents.DayNight.NoActionBar"></code></div>
+                <div class="bg1"><code class="xml">&lt;style name="Theme.MyApp" parent="Theme.Material3.DayNight.NoActionBar"></code></div>
+            </section>
+        </section>
+    </section>
+
     <!-- parte 2 - FUNÇÕES -->
     <!-- <h1 class="post2">Funções</h1> -->
     <!-- <main class="post" src="./pages/AlertDialog.html"></main> -->
 
     <!-- parte 2 - POSTAGENS -->
     <!-- <h1 class="post2">Elements</h1> -->
-    <main id="Button" class="postSimple" src="./pages/WebView.html"></main>
-    <main id="ImageView" class="postSimple" src="./pages/ImageView.html"></main>
-    <main id="TextView" class="postSimple" src="./pages/TextView.html"></main>
-    <main id="EditText" class="postSimple" src="./pages/EditText.html"></main>
-    <main id="Button" class="postSimple" src="./pages/Button.html"></main>
-    <!-- <h1 class="post2">Layout</h1> -->
-    <main id="LinearLayout" class="postSimple" src="./pages/LinearLayout.html"></main>
-    <main id="GridLayout" class="postSimple" src="./pages/GridLayout.html"></main>
+
+    <!-- <main class="postSimple" src="./pages/java.html"></main>  -->
 
     <!-- <main class="post" src="./pages/LinearLayout.html"></main>
     <main class="post" src="./pages/LinearLayout.html"></main>
@@ -64,7 +94,7 @@
     <!-- <main lang="java" class="code" src="./java/LinearLayout.java"></main>    -->
 
     <!-- parte 3 -->
-    <!-- <main lang="xml" class="code" src="./xml/LinearLayout.xml\"></main>    -->
+    <!-- <main lang="xml" class="code" src="./xml/LinearLayout.xml"></main>    -->
     <!-- <main lang="xml" class="code" src="./xml/TextView.xml"></main>    -->
     <!-- <main lang="xml" class="code" src="./xml/Button.xml"></main>    -->
 

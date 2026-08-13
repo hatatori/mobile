@@ -1,0 +1,39 @@
+<h1>WebView</h1>
+<p>WebView é um componente que permite exibir páginas ou conteúdos web dentro de um aplicativo, sem precisar abrir um
+    navegador separado.</p>
+<section class="post bg1">
+
+    <section>
+        <button class="choice-btn btn-selected">XML</button>
+        <button class="choice-btn">JETPACK</button>
+        <section class="choice choice-0">
+            <div class="bg1"><code class="xml">&lt;WebView
+    android:id="@+id/webView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+/></code></div>
+            <div>choice b</div>
+        </section>
+    </section>
+    <hr>
+    <section>
+        <button class="choice-btn btn-selected">JAVA</button>
+        <button class="choice-btn">KOTLIN</button>
+        <section class="choice choice-0">
+            <div class="bg1"><code class="java">WebView webView = findViewById(R.id.webView);
+
+webView
+    .getSettings()
+    .setJavaScriptEnabled(true)
+    .setWebViewClient(new WebViewClient())
+    .loadUrl("https://example.com");</code></div>
+            <div class="bg1"><code class="kotlin">val webView = findViewById&lt;WebView>(R.id.webView)
+
+webView.settings.javaScriptEnabled = true
+webView.settings.domStorageEnabled = true
+webView.webViewClient = WebViewClient()
+webView.loadUrl("https://google.com")</code></div>
+            
+        </section>
+    </section>
+</section>

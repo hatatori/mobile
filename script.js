@@ -130,7 +130,8 @@ function renderPost() {
                 ++totalItems
                 if (mainpage.length == totalItems) {
                     renderPostCode()
-                    buttonsEventSwitchOptionWindow()
+                    // buttonsEventSwitchOptionWindow()
+                    ButtonsGreen()
                 }
 
             })
@@ -160,11 +161,11 @@ function renderPostSimple() {
                 ++totalItems2
                 if (mainpage.length == totalItems2) {
                     renderPostCode()
-                    buttonsEventSwitchOptionWindow()
-
-                    console.log('ok')
+                    // buttonsEventSwitchOptionWindow()
+                    
                     renderCodeTag()
                     RenderQuotes()
+                    ButtonsGreen()
                 }
 
 
@@ -273,7 +274,7 @@ function renderCodeTag() {
     mainpage.map(el => {
 
         if (el.parentElement.tagName == "PRE") return
- 
+
         el.tagName = "outro"
 
         const className = el.className
@@ -352,7 +353,7 @@ function renderCodeTag() {
 // RenderQuotes()
 // })
 
-// substituir aspas
+// SUBSTITUIR ASPAS ( ` )
 function RenderQuotes() {
     ps = Array.from(document.querySelectorAll('p'))
 
@@ -363,3 +364,39 @@ function RenderQuotes() {
         p.innerHTML = resultado
     })
 }
+
+function ButtonsGreen() {
+    /*
+        <section>
+            <button class="choice-btn btn-selected">JAVA</button>
+            <button class="choice-btn">KOTLIN</button>
+            <section class="choice choice-0">
+                <div>choice a</div>
+                <div>choice b</div>
+            </section>
+        </section>
+    */
+    choiceBtn = Array.from(document.querySelectorAll(".choice-btn"))
+
+    choiceBtn.map((btn, index) => {
+
+        btn.onclick = e => {
+
+            const choiceDiv = e.target.parentElement.querySelector('.choice')
+            const tagParent = btn.parentElement
+            const position = Array.from(btn.parentElement.children).indexOf(e.target)
+
+            btn.parentElement.querySelector('.btn-selected').classList?.remove('btn-selected')
+            btn.classList.add('btn-selected')
+ 
+            if (choiceDiv.classList.value.includes("choice-")) {
+                choiceDiv.classList.value = choiceDiv.classList.value.replace(/choice-.+/g, "choice-" + position)
+            } else {
+                choiceDiv.classList.add("choice-" + index)
+            }
+        }
+    })
+}
+
+renderCodeTag()
+ButtonsGreen()

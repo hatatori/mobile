@@ -94,7 +94,10 @@ pre[class*=language-] {
     color: #f4b73d
 }
 
+/* alterações */
 .class-name{color: #79d5ff;}
+/* span.token.function { color: #FF9800; } */
+span.token.operator { color: #FF9800; }
 
 .token.atrule,
 .token.attr-value,
