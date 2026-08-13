@@ -161,7 +161,13 @@ function renderPostSimple() {
                 if (mainpage.length == totalItems2) {
                     renderPostCode()
                     buttonsEventSwitchOptionWindow()
+
+                    console.log('ok')
+                    renderCodeTag()
+                    RenderQuotes()
                 }
+
+
 
             })
     })
@@ -213,6 +219,8 @@ function renderPostCode() {
 renderComponents()
 renderPost()
 renderPostSimple()
+
+
 // renderPostCode()
 
 
@@ -261,12 +269,11 @@ function buttonsEventSwitchOptionWindow() {
 // render codes <code class=...
 function renderCodeTag() {
     const mainpage = Array.from(document.querySelectorAll("code"))
-  
+
     mainpage.map(el => {
 
-        if(el.parentElement.tagName == "PRE") return
-        
-        console.log(el)
+        if (el.parentElement.tagName == "PRE") return
+ 
         el.tagName = "outro"
 
         const className = el.className
@@ -279,8 +286,8 @@ function renderCodeTag() {
         // pre.classList.add('bg1')
 
         // if(el.classList.contains('nobg')){
-            // pre.classList.parentElement.remove('bg1')
-            // el.parentElement.classList.remove('post')
+        // pre.classList.parentElement.remove('bg1')
+        // el.parentElement.classList.remove('post')
         // }
 
         // console.log('el')
@@ -293,7 +300,7 @@ function renderCodeTag() {
         el.replaceWith(pre)
 
         Prism.highlightAll()
-        
+
 
 
         // const tg = document.querySelector("#tg")
@@ -329,12 +336,30 @@ function renderCodeTag() {
 
         //         el.appendChild(d)
 
-        
+
 
         // })
     })
 }
 
-setTimeout(() => {
-    renderCodeTag()
-}, 500)
+// setTimeout(() => {
+// renderCodeTag()
+// RenderQuotes()
+// }, 500)
+
+// document.addEventListener('onload', ()=>{
+// renderCodeTag()
+// RenderQuotes()
+// })
+
+// substituir aspas
+function RenderQuotes() {
+    ps = Array.from(document.querySelectorAll('p'))
+
+    ps.map(p => {
+        texto = p.innerHTML
+        const resultado = texto.replace(/`([^`]*)`/g, "<span class='highlight'>$1</span>");
+        // console.log(resultado) 
+        p.innerHTML = resultado
+    })
+}

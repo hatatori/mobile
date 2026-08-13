@@ -5,4 +5,4 @@ Text(
     fontStyle = FontStyle.Italic,
     textDecoration = TextDecoration.Underline,
     modifier = Modifier.border(1.dp, Color.Black)
-)
+) 

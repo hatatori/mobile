@@ -94,6 +94,8 @@ pre[class*=language-] {
     color: #f4b73d
 }
 
+.class-name{color: #79d5ff;}
+
 .token.atrule,
 .token.attr-value,
 .token.keyword {

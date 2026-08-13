@@ -14,6 +14,11 @@
     --coral: #0f9d55;
     --ink: #101010;
     --text: #5c5c5c;
+    --blue: #79d5ff;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
@@ -21,8 +26,9 @@
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
-
+    outline: none !important;
     font-family: "JetBrains Mono", monospace;
+    
 }
 
 a {
@@ -181,6 +187,10 @@ input[name=option-btn]:checked + .btn{
     border-bottom-color: var(--lime);
     box-shadow: 0 8px 24px rgba(16, 16, 16, .06);
     color: var(--grayD);
+
+    position: sticky;
+    top: 0px;
+    z-index: 3;
 }
 
 .MenuTop ul {
@@ -232,20 +242,25 @@ input[name=option-btn]:checked + .btn{
     z-index: 50;
     backdrop-filter: blur(4px);
     list-style-type: none;
-
-
-
+ 
 }
 
 .MenuSide ul li {
     padding: 1em;
-
 }
 
 .MenuSide ul li:hover {
     color: var(--lime);
-    cursor: pointer;
+    cursor: pointer; 
+}
 
+/* link2 */
+.link2{
+    color: var(--grayD);
+}
+
+.link2:hover{
+    text-decoration: none;
 }
 
 /* @media (max-width: 1250px){
@@ -296,4 +311,9 @@ input[name=option-btn]:checked + .btn{
 
 .imageZoom input + img {
     max-width: 100px;
+}
+
+/* highlight */
+.highlight{
+    color: var(--blue);
 }

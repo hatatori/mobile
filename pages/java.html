@@ -199,8 +199,8 @@ int[] numeros = new int[]{10, 20, 30, 40, 50};
 </section>
 
 <!-- parte -->
-<section class="post bg1">
 <h2>Percorrendo um array</h2>
+<section class="post bg1">
 <code class="java">
 int[] numeros = {10, 20, 30, 40};
 
@@ -219,8 +219,8 @@ for (int numero : numeros) {
 
 
 <!-- post -->
-<section class="post bg1">
 <h2>List</h2>
+<section class="post bg1">
 <code class="java"> 
 List → coleção ordenada
 Set → coleção sem duplicatas
@@ -230,8 +230,8 @@ Queue → fila
 </section>
 
 <!-- post -->
-<section class="post bg1">
 <h2>Mutabilidade</h2>
+<section class="post bg1">
 <code class="java"> 
 // Lista imutável
 List&lt;String> names = List.of("Dog", "Cat", "Bird", "Dog");
@@ -273,6 +273,97 @@ animals.put("Snake", 0);
 animals.get("Dog"); // 4 
 animals.put("Dog", 3); // alteração
 animals.remove("Dog"); // remove
+</code>
+</section>
+
+<!-- post -->
+<h1>Método</h1>
+<p>Um método é um bloco de código que executa uma tarefa específica com ou sem retorno.</p>
+<section class="post bg1">
+<code class="java"> 
+public void DizerMarca(){
+    System.out.println("Eu sou da marca Toyota");
+}
+</code>
+</section>
+
+<p>Um método deve está contido dentro de uma classe.</p>
+<section class="post bg1">
+<code class="java">
+public class Carro{
+    public void DizerMarca(){
+        System.out.println("Eu sou da marca Toyota");
+    }
+}
+</code>
+</section>
+
+<p>A variável `carro` recebe a referência de um novo objeto Carro, que é instanciado pelo `new Carro()`.</p>
+<p>A variável carro acessa o objeto Carro e executa o método DizerMarca().</p>
+
+<section class="post bg1">
+<code class="java">
+
+Carro carro = new Carro();
+
+carro.DizerMarca();
+</code>
+</section>
+
+<h2>Métodos com parâmetro</h2>
+<p>Métodos com parâmetro são métodos que recebem valores como entrada para usar durante sua execução.</p>
+<section class="post bg1">
+<code class="java">
+public class Matematica {
+    public double soma(double a, double b){
+        return a+b;
+    }
+
+    public double subtracao(double a, double b){
+        return a-b;
+    }
+
+    public double multiplicacao(double a, double b){
+        return a*b;
+    }
+
+    public double divisao(double a, double b){
+        return a/b;
+    }
+}
+</code>
+</section>
+<section class="post bg1">
+<code class="java">
+Matematica math = new Matematica();
+
+Double n1 = math.soma(10, 10);
+Double n2 = math.subtracao(10, 10);
+Double n3 = math.multiplicacao(10, 10);
+Double n4 = math.divisao(10, 10);
+
+System.out.println( n1 ); // 20.0
+System.out.println( n2 ); // 0.0
+System.out.println( n3 ); // 100.0
+System.out.println( n4 ); // 1.0
+</code>
+</section>
+
+
+<h2>Static</h2>
+<p>static permite chamar o método diretamente pela classe, sem criar um objeto:</p>
+<section class="post bg1">
+<code class="java">
+public class Moto{
+    public static void DizerMarca(){
+        System.out.println("Eu sou da marca Mitsubishi");
+    }
+}
+</code>
+</section> 
+<section class="post bg1">
+<code class="java">
+Moto.DizerMarca()
 </code>
 </section>
 
@@ -324,9 +415,57 @@ Pessoa pessoa2 = new Pessoa("Renata", 20);
 Pessoa pessoa3 = new Pessoa("Ana", 20);
 
 pessoa1.apresentar();
-pessoa1.apresentar();
-pessoa1.apresentar();
+pessoa2.apresentar();
+pessoa3.apresentar();
  
+</code>
+</section>
+
+<!-- post -->
+<h1>Herança</h1>
+<p>A herança permite que uma classe herde características e métodos de outra, facilitando a reutilização de código. Usa-se a palavra-chave extends.</p>
+<section class="post bg1">
+<code class="java"> 
+class Animal {
+    void comer() {
+        System.out.println("Está comendo");
+    }
+}
+</code>
+</section>
+<section class="post bg1">
+<code class="java"> 
+class Cachorro extends Animal {
+    void latir() {
+        System.out.println("Au au!");
+    }
+}
+</code>
+</section>
+<section class="post bg1">
+<code class="java"> 
+class Gato extends Animal {
+    void miar() {
+        System.out.println("Miau!");
+    }
+}
+</code>
+</section>
+
+<pre>Animal
+ ├── Cachorro
+ └── Gato</pre>
+<p>gato e cachorro recebem o método .comer() herdada da classe Animal</p>
+<section class="post bg1">
+<code class="java"> 
+Cachorro cachorro = new Cachorro();
+Gato gato = new Gato();
+
+cachorro.comer();
+gato.comer();
+
+cachorro.latir();
+gato.miar();
 </code>
 </section>
 

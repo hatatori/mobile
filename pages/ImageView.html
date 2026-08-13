@@ -1,0 +1,59 @@
+<h1>&lt;ImageView/></h1>
+
+<p>Para que o aplicativo possa trocar informações com a internet, é necessário realizar uma configuração no arquivo `AndroidManifest.xml`</p>
+<section class="post bg1">
+<code class="xml">&lt;uses-permission android:name="android.permission.INTERNET" /></code>
+</section>
+<p>Adicione a dependência abaixo no `build.gradle.kts`</p>
+<p>Isso é a dependência do Glide no seu projeto Android: Ela permite carregar imagens da internet</p>
+<section class="post bg1">
+<code class="kotlin">implementation("com.github.bumptech.glide:glide:4.16.0")</code>
+</section>
+
+<p>ImageView é um componente do Android usado para exibir imagens na tela. Você pode especificar a imagem através do atributo `android:src`</p>
+
+<section class="post bg1">
+
+<section class="options">
+
+
+    <button class="btn btnOption" value="xml">XML</button>
+    <button class="btn btnOption" value="jetpack">JETPACK</button> 
+
+    <div class="optionItem xml" style="display: block;">
+        <h2>XML</h2>
+        <main lang="xml" class="code" src="../xml/ImageView.xml"></main>
+    </div>
+
+    <div class="optionItem jetpack">
+        <h2>JETPACK COMPOSE</h2>
+        <main lang="kotlin" class="code" src="../jetpack/Image.kt"></main>
+    </div> 
+ 
+</section> 
+
+<hr>
+
+<section class="options">
+
+    <button class="btn btnOption" value="java">JAVA 1</button>
+    <button class="btn btnOption" value="kotlin">KOTLIN</button>
+    
+    <div class="optionItem java" style="display: block;">
+        <h2>JAVA</h2>
+        <main lang="java" class="code" src="../javaCode/ImageView.java"></main>
+    </div> 
+
+    <div class="optionItem kotlin">
+        <h2>KOTLIN</h2>
+        <main lang="kotlin" class="code" src="../kotlinCode/Image.kt"></main>
+    </div> 
+ 
+</section> 
+</section>
+
+
+
+
+
+    
