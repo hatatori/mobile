@@ -1,0 +1,75 @@
+<h1>&lt;Checkbox/></h1>
+<a target="_blank" href="https://m3.material.io/components/checkbox/overview">Checkbox</a>
+<p>CheckBox é um elemento de interface que permite ao usuário selecionar uma ou mais opções independentes com dois
+    estados possíveis: marcado ou desmarcado (true ou false).</p>
+
+<div class="example-crop-image">
+    <img src="./imgs/example_checkbox.png">
+</div>
+
+
+<section class="post bg1">
+
+    <section>
+        <button class="choice-btn btn-selected">XML</button>
+        <button class="choice-btn">KOTLIN</button>
+        <section class="choice choice-0">
+            <div class="bg1">
+                <code class="xml">
+                    &lt;CheckBox
+    android:id="@+id/checkBox"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Cebola" 
+/>
+                </code>
+            </div>
+            <div class="bg1">
+                <code class="kotlin">
+var cebolaSelecionada by remember { mutableStateOf(false) }
+
+Checkbox(
+    checked = cebolaSelecionada,
+    onCheckedChange = {
+        cebolaSelecionada = it
+    }
+)
+                </code>
+            </div>
+        </section>
+    </section>
+
+    <hr>
+
+    <section>
+        <section>
+            <button class="choice-btn btn-selected">JAVA</button>
+            <button class="choice-btn">KOTLIN</button>
+            <p>.setOnCheckedChangeListener() - Evento de mudança</p>
+            <section class="choice choice-0">
+                <div class="bg1"><code class="java">
+                    CheckBox checkBox = findViewById(R.id.checkBox);
+ 
+checkBox.setOnCheckedChangeListener((v, isChecked)->{ ... });
+
+if(checkBox.isChecked()){ ... }
+                </code></div>
+                    
+                    <div class="bg1">
+                        <code class="kotlin">
+                        val checkBox = findViewById&lt;CheckBox>(R.id.checkBox)
+
+// evento de mudança
+checkBox.setOnCheckedChangeListener { buttonView, isChecked -> ... }
+
+// verificar se está marcado
+if (checkBox.isChecked) { ... }
+                    </code>
+                    </div>
+            </section>
+        </section>
+    </section>
+
+
+
+</section>

@@ -376,3 +376,16 @@ input[name=option-btn]:checked + .btn{
 .list-style-1 li{
     padding: 5px 0;
 }
+
+/* IMAGE EXAMPLE */
+.example{width: 100%;}
+
+.example-crop-image{
+    overflow: hidden;
+    height: 300px;
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,4 +1,4 @@
-<h1>WebView</h1>
+<h1>&lt;WebView/></h1>
 <p>WebView é um componente que permite exibir páginas ou conteúdos web dentro de um aplicativo, sem precisar abrir um
     navegador separado.</p>
 <section class="post bg1">
@@ -12,7 +12,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" 
 /></code></div>
-            <div>choice b</div>
+            <div class="bg1"><code class="kotlin">AndroidView(
+    factory = { context ->
+        WebView(context).apply {
+            webViewClient = WebViewClient()
+            settings.javaScriptEnabled = true
+            loadUrl("https://youtube.com")
+        }
+    }
+)</code></div>
         </section>
     </section>
     <hr>

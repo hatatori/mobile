@@ -1,10 +1,8 @@
 <h1>&lt;ImageView/></h1>
 
-
-
 <!-- parte 2 -->
 <!-- <h2>Adicionando Imagem</h2> -->
-<p>ImageView é um componente do Android usado para exibir imagens na tela. Você pode especificar a imagem através do
+<p>ImageView ( Image ) é um componente do Android usado para exibir imagens na tela. Você pode especificar a imagem através do
     atributo `android:src`</p>
 <img src="./imgs/passaro.jpg" >
 
@@ -14,10 +12,36 @@
     <section>
         <button class="choice-btn btn-selected">XML</button>
         <button class="choice-btn">JETPACK</button>
+        <button class="choice-btn">JETPACK</button>
         <section class="choice choice-0">
             <div><main lang="xml" class="code" src="./xml/ImageView.xml"></main></div>
-            <div><main lang="kotlin" class="code" src="./jetpack/Image.kt"></main></div>
-        </section>
+            <!-- <div><main lang="kotlin" class="code" src="./jetpack/Image.kt"></main></div> -->
+             
+
+<div>
+    <p>offline</p>
+    <div class="bg1">
+        <code class="kotlin">Image(
+    painter = painterResource(R.drawable.my_image),
+    contentDescription = "Desc",
+    modifier = Modifier.size(100.dp)
+)</code>
+    </div>
+</div>
+
+<!-- bloco 2 -->
+<div>
+    <p>online</p>
+    <div class="bg1">
+<code class="kotlin">
+AsyncImage(
+    model = "https://exemplo.com/foto.jpg",
+    contentDescription = "Desc",
+    modifier = Modifier.size(100.dp)
+)</code>
+    </div>
+</div>
+            </section>
     </section>
  
 
@@ -25,10 +49,51 @@
 
     <section>
         <button class="choice-btn btn-selected">JAVA</button>
+        <button class="choice-btn">JAVA</button>
+        <button class="choice-btn">KOTLIN</button>
         <button class="choice-btn">KOTLIN</button>
         <section class="choice choice-0">
-            <div><main lang="java" class="code" src="./javaCode/ImageView.java"></main></div>
-            <div><main lang="kotlin" class="code" src="./kotlinCode/Image.kt"></main></div>
+            <div>
+                <p>offline</p>
+                <div class="bg1">
+                    <code class="java">ImageView imageView = findViewById(R.id.imageView);
+                        
+imageView.setImageResource(R.drawable.outra_imagem);</code>
+                </div>
+            </div>
+            <div>
+                <p>online</p>
+                <div class="bg1">
+                    <code class="java">ImageView imageView = findViewById(R.id.imageView);
+                        
+Glide
+    .with(this)
+    .load("https://exemplo.com/foto.jpg")
+    .into(imageView);</code>
+                </div>
+            </div>
+            <!-- <div><main lang="java" class="code" src="./javaCode/ImageView.java"></main></div> -->
+            <!-- <div><main lang="kotlin" class="code" src="./kotlinCode/Image.kt"></main></div> -->
+
+            <div>
+                <p>offline</p>
+                <div class="bg1">
+                    <code class="kotlin">val imageView = findViewById&lt;ImageView>(R.id.imageView)
+
+imageView.setImageResource(R.drawable.outra_imagem)</code>
+                </div>
+            </div>
+            <div>
+                <p>online</p>
+                <div class="bg1">
+                    <code class="kotlin">val imageView = findViewById&lt;ImageView>(R.id.imageView)
+
+Glide.with(this)
+    .load("https://exemplo.com/foto.jpg")
+    .into(imageView)</code>
+                </div>
+            </div>
+
         </section>
     </section>
 
@@ -50,8 +115,8 @@
     <button class="choice-btn">style.xml</button>
     <button class="choice-btn">Jetpack</button>
     <button class="choice-btn">Jetpack</button>
-
-    <section class="choice choice-0">
+    <div class="bg1">
+<section class="choice choice-0">
         <div>
             <!-- bloco 1 -->
             <code class="xml">
@@ -99,6 +164,8 @@
         <div></div>
 
     </section>
+    </div>
+    
 </section>
 
 
