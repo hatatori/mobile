@@ -377,15 +377,26 @@ input[name=option-btn]:checked + .btn{
     padding: 5px 0;
 }
 
+.list-style-2{ padding: 1em; }
+.list-style-2 ul{
+    color: var(--text);
+    padding: 1em;
+}
+.list-style-2 li{
+    color: var(--text);
+    list-style: none;
+}
+
 /* IMAGE EXAMPLE */
-.example{width: 100%;}
+.example-image{width: 100%;}
 
 .example-crop-image{
     overflow: hidden;
     height: 300px;
     width: 100%;
-    background-color: red;
+    background-color: #242424;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+ 

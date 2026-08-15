@@ -1,11 +1,11 @@
 <!-- Numeros -->
-
+<!-- Classe → Objeto → Encapsulamento → Abstração → Herança → Polimorfismo → Composição -->
 
 <!-- <code>Java</code> -->
 
 <h1>Tipos de variáveis (primitivo)</h1>
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 int idade = 20;
 double altura = 1.65;
 float peso = 60.5f;
@@ -17,7 +17,7 @@ byte quantidade = 5;
 
 <h1>Tipos de variáveis</h1>
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 String nome = "Maria";
 Integer idade = 20;
 Double altura = 1.65;
@@ -31,9 +31,9 @@ Byte quantidade = 5;
 </code>
 </section>
 
-<h1>Operadores Aritiméticos</h1> 
+<h1>Operadores Aritiméticos</h1>
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 +	// Adição	                10 + 5 = 15
 -	// Subtração	            10 - 5 = 5
 *	// Multiplicação	        10 * 5 = 50
@@ -41,10 +41,10 @@ Byte quantidade = 5;
 %	// Módulo (Resto)  (resto)	10 % 3 = 1
 </code>
 </section>
- 
-<h1>Operadores relacionais</h1> 
+
+<h1>Operadores relacionais</h1>
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 ==  // igual
 !=  // diferente
 >   // maior que
@@ -58,13 +58,13 @@ Byte quantidade = 5;
 !   // NÃO
 </code>
 </section>
- 
+
 
 <h1>Estrutura de decisão</h1>
 <section class="post bg1">
 
-<!-- exemplo 1 --> 
-<code class="java">
+    <!-- exemplo 1 -->
+    <code class="java">
 int idade = 20;
 
 if (idade >= 18) {
@@ -74,8 +74,8 @@ if (idade >= 18) {
 </section>
 
 <section class="post bg1">
-<!-- exemplo 2 --> 
-<code class="java">
+    <!-- exemplo 2 -->
+    <code class="java">
 int idade = 16;
 
 if (idade >= 18) {
@@ -87,8 +87,8 @@ if (idade >= 18) {
 </section>
 
 <section class="post bg1">
-<!-- exemplo 3 --> 
-<code class="java">
+    <!-- exemplo 3 -->
+    <code class="java">
 int nota = 8;
 
 if (nota >= 9) {
@@ -109,7 +109,7 @@ if (nota >= 9) {
 </section>
 
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 String login = "admin";
 String password = "1234";
 
@@ -123,7 +123,7 @@ if (login.equals("admin") && password.equals("1234")) {
 
 
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 int opcao = 2;
 
 switch (opcao) {
@@ -134,18 +134,18 @@ switch (opcao) {
 }
 </code>
 </section>
- 
-<h1>Estrutura de repetição</h1> 
+
+<h1>Estrutura de repetição</h1>
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 for (int i = 1; i <= 10; i++) {
     System.out.println(i);
 } 
-</code>  
+</code>
 </section>
 
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
         System.out.println("i = " + i + ", j = " + j);
@@ -155,7 +155,7 @@ for (int i = 0; i < 3; i++) {
 </section>
 
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 while (condição) {
     // código que será repetido
 }
@@ -163,7 +163,7 @@ while (condição) {
 </section>
 
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 int contador = 1;
 
 while (contador <= 5) {
@@ -174,7 +174,7 @@ while (contador <= 5) {
 </section>
 
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 int senha = 1234;
 int tentativa = 0;
 
@@ -189,7 +189,7 @@ System.out.println("Senha correta!");
 <h1>Arrays</h1>
 <p>Um array é uma estrutura que guarda vários valores do mesmo tipo em uma única variável.</p>
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 int[] numeros = {10, 20, 30, 40, 50};
 
 ou
@@ -201,7 +201,7 @@ int[] numeros = new int[]{10, 20, 30, 40, 50};
 <!-- parte -->
 <h2>Percorrendo um array</h2>
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 int[] numeros = {10, 20, 30, 40};
 
 for (int i = 0; i < numeros.length; i++) {
@@ -221,7 +221,7 @@ for (int numero : numeros) {
 <!-- post -->
 <h2>List</h2>
 <section class="post bg1">
-<code class="java"> 
+    <code class="java">
 List → coleção ordenada
 Set → coleção sem duplicatas
 Map → chave e valor
@@ -232,7 +232,7 @@ Queue → fila
 <!-- post -->
 <h2>Mutabilidade</h2>
 <section class="post bg1">
-<code class="java"> 
+    <code class="java">
 // Lista imutável
 List&lt;String> names = List.of("Dog", "Cat", "Bird", "Dog");
 
@@ -259,8 +259,8 @@ List&lt;String> upper = names.stream().map(String::toUpperCase).toList();
 
 <!-- post -->
 <section class="post bg1">
-<h2>Hashmap</h2>
-<code class="java"> 
+    <h2>Hashmap</h2>
+    <code class="java">
 HashMap&lt;String, Integer> animals = new HashMap<>();
   
 animals.put("Dog", 4);
@@ -280,7 +280,7 @@ animals.remove("Dog"); // remove
 <h1>Método</h1>
 <p>Um método é um bloco de código que executa uma tarefa específica com ou sem retorno.</p>
 <section class="post bg1">
-<code class="java"> 
+    <code class="java">
 public void DizerMarca(){
     System.out.println("Eu sou da marca Toyota");
 }
@@ -289,7 +289,7 @@ public void DizerMarca(){
 
 <p>Um método deve está contido dentro de uma classe.</p>
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 public class Carro{
     public void DizerMarca(){
         System.out.println("Eu sou da marca Toyota");
@@ -302,7 +302,7 @@ public class Carro{
 <p>A variável carro acessa o objeto Carro e executa o método DizerMarca().</p>
 
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 
 Carro carro = new Carro();
 
@@ -313,7 +313,7 @@ carro.DizerMarca();
 <h2>Métodos com parâmetro</h2>
 <p>Métodos com parâmetro são métodos que recebem valores como entrada para usar durante sua execução.</p>
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 public class Matematica {
     public double soma(double a, double b){
         return a+b;
@@ -334,7 +334,7 @@ public class Matematica {
 </code>
 </section>
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 Matematica math = new Matematica();
 
 Double n1 = math.soma(10, 10);
@@ -353,16 +353,16 @@ System.out.println( n4 ); // 1.0
 <h2>Static</h2>
 <p>static permite chamar o método diretamente pela classe, sem criar um objeto:</p>
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 public class Moto{
     public static void DizerMarca(){
         System.out.println("Eu sou da marca Mitsubishi");
     }
 }
 </code>
-</section> 
+</section>
 <section class="post bg1">
-<code class="java">
+    <code class="java">
 Moto.DizerMarca()
 </code>
 </section>
@@ -371,7 +371,7 @@ Moto.DizerMarca()
 <h1>Classe</h1>
 <p>Uma classe em Java é um molde para criar objetos.</p>
 <section class="post bg1">
-<code class="java"> 
+    <code class="java">
 public class NomeDaClasse { 
     // atributos
     // construtor
@@ -383,7 +383,7 @@ public class NomeDaClasse {
 <!-- post -->
 <p>Abaixo uma classe completa.</p>
 <section class="post bg1">
-<code class="java"> 
+    <code class="java">
 public class Pessoa {
 
     // Atributos
@@ -408,8 +408,8 @@ public class Pessoa {
 <!-- post -->
 <p>Criando um objeto da classe Pessoa.</p>
 <section class="post bg1">
-<code class="java"> 
- 
+    <code class="java">
+
 Pessoa pessoa1 = new Pessoa("Ana", 20);
 Pessoa pessoa2 = new Pessoa("Renata", 20);
 Pessoa pessoa3 = new Pessoa("Ana", 20);
@@ -422,10 +422,89 @@ pessoa3.apresentar();
 </section>
 
 <!-- post -->
+<div class="post">
+    <h1>Abstração</h1>
+    <!-- codigo 1 -->
+
+    <p>Abstração é o princípio que consiste em esconder os detalhes complexos de implementação e mostrar apenas as
+        funcionalidades essenciais de um objeto para quem vai utilizá-lo.</p>
+
+    <p>Na prática, significa criar um modelo simplificado da realidade, focando no que é relevante para o problema que você está resolvendo, e ignorando os detalhes desnecessários.</p></p>
+
+
+
+    <div class="bg1 post">
+        <code class="java">
+        abstract public class Geometria {
+    abstract double calcularArea();
+    abstract double calcularPerimetro();
+} </code>
+    </div>
+    <!-- codigo 1 -->
+    <div class="bg1 post">
+        <code class="java">
+public class Quadrado extends Geometria{
+
+    double lado;
+
+    Quadrado(double lado){
+        this.lado = lado;
+    }
+
+    @Override
+    double calcularArea() {
+        return lado * lado;
+    }
+
+    @Override
+    double calcularPerimetro() {
+        return 4 * lado;
+    }
+}</code>
+    </div>
+    <!-- codigo 1 -->
+    <div class="bg1 post">
+        <code class="java">
+public class Circulo extends Geometria{
+
+    double raio;
+
+    Circulo(double raio) {
+        this.raio = raio;
+    }
+
+    @Override
+    double calcularArea() {
+        return Math.PI * this.raio * this.raio;
+    }
+
+    @Override
+    double calcularPerimetro() {
+        return 2 * Math.PI * this.raio;
+    }
+}</code>
+    </div>
+
+    <div class="bg1 post">
+        <code class="java">
+Quadrado quadrado = new Quadrado(3);
+quadrado.calcularArea();
+quadrado.calcularPerimetro();
+
+Circulo circulo = new Circulo(5);
+circulo.calcularArea();
+circulo.calcularPerimetro();
+        </code>
+    </div>
+
+</div>
+
+<!-- post -->
 <h1>Herança</h1>
-<p>A herança permite que uma classe herde características e métodos de outra, facilitando a reutilização de código. Usa-se a palavra-chave extends.</p>
+<p>A herança permite que uma classe herde características e métodos de outra, facilitando a reutilização de código.
+    Usa-se a palavra-chave extends.</p>
 <section class="post bg1">
-<code class="java"> 
+    <code class="java">
 class Animal {
     void comer() {
         System.out.println("Está comendo");
@@ -434,7 +513,7 @@ class Animal {
 </code>
 </section>
 <section class="post bg1">
-<code class="java"> 
+    <code class="java">
 class Cachorro extends Animal {
     void latir() {
         System.out.println("Au au!");
@@ -443,7 +522,7 @@ class Cachorro extends Animal {
 </code>
 </section>
 <section class="post bg1">
-<code class="java"> 
+    <code class="java">
 class Gato extends Animal {
     void miar() {
         System.out.println("Miau!");
@@ -457,7 +536,7 @@ class Gato extends Animal {
  └── Gato</pre>
 <p>gato e cachorro recebem o método .comer() herdada da classe Animal</p>
 <section class="post bg1">
-<code class="java"> 
+    <code class="java">
 Cachorro cachorro = new Cachorro();
 Gato gato = new Gato();
 
@@ -469,5 +548,104 @@ gato.miar();
 </code>
 </section>
 
+<section class="post">
+    <h1>Polimorfismo</h1>
 
+    <p>Em Java, o polimorfismo permite que uma mesma referência seja usada para representar objetos de diferentes
+        classes, fazendo com que o comportamento executado dependa do objeto real.</p>
 
+    <!-- main -->
+    <p></p>
+    <div class="bg1">
+        <code class="java">public class Cachorro extends Animal{
+    public void fazerSom() {
+        System.out.println("Au au");
+    }
+}</code>
+    </div>
+    <p></p>
+    <div class="bg1">
+        <code class="java">public class Gato extends Animal {
+    public void fazerSom() {
+        System.out.println("Miau");
+    }
+}</code>
+    </div>
+
+    <!-- main -->
+
+    <!-- main -->
+    <p>
+    <P>As variáveis animal1 e animal2 têm o tipo Animal, mas executam o método da classe do objeto que realmente foi
+        criado (Cachorro ou Gato).</P>
+    </p>
+    <div class="bg1">
+        <code class="java">
+Animal animal1 = new Cachorro();
+Animal animal2 = new Gato();
+
+animal1.fazerSom(); // Saída: AU AU
+animal2.fazerSom(); // Saída: MIAU
+        </code>
+    </div>
+
+</section>
+
+<section class="post">
+    <h1>Composição</h1>
+    <p>Composição é um conceito da Programação Orientada a Objetos em que uma classe possui um objeto de outra classe
+        como parte de sua estrutura.</p>
+    <div class="bg1">
+        <code class="java">
+            class Motor {
+    void ligar() {
+        System.out.println("Motor ligado!");
+    }
+}
+        </code>
+    </div>
+    <p>A classe `Carro` recebe a classe `Motor` </p>
+    <div class="bg1">
+        <code class="java">
+            class Carro {
+    private Motor motor;
+
+    public Carro() {
+        motor = new Motor();
+    }
+
+    void ligarCarro() {
+        motor.ligar();
+        System.out.println("Carro ligado!");
+    }
+}
+        </code>
+    </div>
+    <p></p>
+    <div class="bg1">
+        <code class="java">
+Carro carro = new Carro();
+
+carro.ligarCarro();
+        </code>
+    </div>
+
+    <h3>Desafio</h3>
+    <p>Faça o código se comunicar de acordo com a composição.</p>
+    <div class="bg1">
+        <code class="java">
+            Produto celular = new Produto("Celular", 2000);
+Produto fone = new Produto("Fone", 200);
+
+ItemPedido item1 = new ItemPedido(celular, 1);
+ItemPedido item2 = new ItemPedido(fone, 2);
+
+Pedido pedidos = new Pedido();
+
+pedidos.adicionarItem(item1);
+pedidos.adicionarItem(item2);
+
+System.out.println( pedidos.calcularTotal() ); //2400
+        </code>
+    </div>
+</section>
