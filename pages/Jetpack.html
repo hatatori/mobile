@@ -1,0 +1,154 @@
+<!-- post -->
+<section class="post">
+    <h1>Imagem</h1>
+    <p>Usado para exibir imagens na tela. Você pode especificar a imagem através do atributo android:src</p>
+    <img src="./imgs/passaro.jpg">
+
+
+    <section>
+        <button class="choice-btn btn-selected">Offline</button>
+        <button class="choice-btn">Online</button>
+        <section class="choice choice-0">
+            <div>
+                <div class="bg1"><code class="kotlin">
+                    Image(
+    painter = painterResource(R.drawable.my_image),
+    contentDescription = "Desc",
+    modifier = Modifier.size(100.dp)
+)
+                </code></div>
+            </div>
+            <div>
+                <div class="bg1"><code class="kotlin">
+AsyncImage(
+    model = "https://exemplo.com/foto.jpg",
+    contentDescription = "Desc",
+    modifier = Modifier.size(100.dp)
+)
+                </code></div>
+            </div>
+        </section>
+    </section>
+
+
+
+
+
+    </div>
+    <h2>Arredondamento</h2>
+    <p>O `.clip()` é a tem a função de arredondamento</p>
+    <section>
+        <button class="choice-btn btn-selected">EXEMPLO 1</button>
+        <button class="choice-btn">EXEMPLO 2</button>
+        <section class="choice choice-0">
+            <div>
+                <p>Arredonda todos os vértices</p>
+                <div class="bg1"><code class="kotlin">Image(
+    painter = painterResource(R.drawable.minha_imagem),
+    contentDescription = null,
+    modifier = Modifier
+        .size(120.dp)
+        .clip(RoundedCornerShape(16.dp)),
+    contentScale = ContentScale.Crop
+)</code></div>
+            </div>
+            <div>
+                <p>Arredonda vértices de forma individual</p>
+                <div class="bg1"><code class="kotlin">Image(
+    painter = painterResource(R.drawable.minha_imagem),
+    contentDescription = null,
+    modifier = Modifier
+        .size(120.dp)
+        .clip(
+            RoundedCornerShape(
+                topStart = 20.dp,
+                topEnd = 20.dp,
+                bottomStart = 0.dp,
+                bottomEnd = 0.dp
+            )
+        ),
+    contentScale = ContentScale.Crop
+)</code></div>
+            </div>
+        </section>
+    </section>
+
+</section>
+
+<!-- post -->
+<section class="post">
+    <h1>Linha e Coluna</h1>
+    <p>`Row` e `Column` são usados para organizar elementos</p>
+    <p>Linha ( Um elemento abaixo do outro )</p>
+    <div class="bg1  post">
+        <code class="kotlin">
+Row(){
+    Text("Cat")
+    Text("Dog")
+    Text("Fox")   
+}
+        </code>
+    </div>
+    <p>Coluna ( Um elemento do lado do outro ) </p>
+    <div class="bg1  post">
+        <code class="kotlin">
+Column(){
+    Text("Cat")
+    Text("Dog")
+    Text("Fox")   
+}
+        </code>
+    </div>
+</section>
+
+
+
+<!-- post -->
+<section class="post">
+    <h1>AlertDialog</h1>
+    <a href="https://developer.android.com/develop/ui/compose/components/dialog?hl=pt-br">AlertDialog</a>
+    <p>Uma caixa de diálogo é uma pequena janela que leva o usuário a tomar uma decisão ou inserir mais informações.
+        Elas não ocupam toda a tela e são normalmente usadas para eventos modais que exijam que usuários realizem uma
+        ação antes de continuar.</p>
+
+    <label class="imageZoom"><input type="checkbox"><img src="./imgs/ArlertDialog.png"></label>
+
+    <div class="bg1 post">
+        <code class="kotlin">
+AlertDialog(
+    onDismissRequest = { }, // ao clicar fora
+    confirmButton = { },
+    text = { }
+)
+    </code>
+</div>
+
+
+    <div class="">
+        <h2>Exemplo completo</h2>
+        <div class="bg1">
+            <code class="kotlin">
+            @Composable
+fun AlertDialogExample1(){
+    var showDialog by remember { mutableStateOf(false) }
+
+    Button(onClick = { showDialog = true }) {
+        Text("Abrir")
+    }
+
+    if (showDialog) {
+        AlertDialog(
+            onDismissRequest = { showDialog = false },
+            confirmButton = {
+                TextButton(onClick = { showDialog = false }) {
+                    Text("Confirmar")
+                }
+            },
+            text = { Text("Milkshake") }
+        )
+    }
+}
+        </code>
+        </div>
+    </div>
+</section>
