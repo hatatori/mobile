@@ -1,0 +1,56 @@
+<section class="post">
+    <h1>Text field</h1>
+    <!-- <div class="example-crop-image">
+        <img src="./imgs/example_textfield.png">
+    </div> -->
+
+    <div class="material3-example">
+ 
+        <div class="material3-example-textField" >
+            Input
+            <div class="label">Label</div>
+        </div>
+
+    </div>
+
+    <div class="bg1 post">
+        <code class="kotlin">
+            var text by remember { mutableStateOf("") }
+
+OutlinedTextField(
+    value = text,
+    onValueChange = { text = it },
+    label = { Text("Name") },
+    placeholder = { Text("Enter your name") },
+    modifier = Modifier.width(300.dp).padding(10.dp),
+    singleLine = true,
+    leadingIcon = {
+        Icon(
+            imageVector = Icons.Default.Person,
+            contentDescription = "Nome"
+        )
+    }
+)
+        </code>
+    </div>
+    <div class="bg1 post">
+        <code class="kotlin">
+            var text by remember { mutableStateOf("") }
+
+OutlinedTextField(
+    value = text,
+    onValueChange = { text = it },
+    label = { Text("Name") },
+    placeholder = { Text("Enter your name") },
+    modifier = Modifier.width(300.dp).padding(10.dp),
+    singleLine = true,
+    leadingIcon = {
+        Icon(
+            imageVector = Icons.Default.Person,
+            contentDescription = "Nome"
+        )
+    }
+)
+        </code>
+    </div>
+</section>

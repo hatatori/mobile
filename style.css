@@ -152,6 +152,7 @@ input[name=option-btn]:checked + .btn{
     padding: 1em  !important;
     background: rgb(from var(--grayB) r g b / 30%)  !important;
 }
+ 
 
 .post,
 .post2 {
@@ -160,7 +161,7 @@ input[name=option-btn]:checked + .btn{
     max-width: 100%;
     margin: auto;
     /* background: rgba(var(--carrot), 50%) */
-    padding: 1em;
+    padding: 1em 0;
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -398,5 +399,36 @@ input[name=option-btn]:checked + .btn{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 1em 0;
 }
  
+
+.material3-example{
+    height: 300px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* MATERIAL 3 EXAMPLE */
+.material3-example-textField{
+    border: solid 5px #6750a4;
+    padding: 1.5em 1.5em;
+    width: 300px;
+    border-radius: 5px;
+    color: #6750a4;
+    position: relative; 
+    color: black;
+    
+}
+
+.material3-example-textField .label{
+    position: absolute;
+    top: -23px;
+    left: 1.0em;
+    color: #6750a4;
+    background-color: white;
+    padding: 10px;
+}

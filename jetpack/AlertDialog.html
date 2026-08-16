@@ -1,0 +1,54 @@
+<!-- post -->
+<section class="post">
+    <h1>AlertDialog</h1>
+
+    <div class="example-crop-image">
+        <img src="./imgs/ArlertDialog.png">
+    </div>
+
+    <a href="https://developer.android.com/develop/ui/compose/components/dialog?hl=pt-br">AlertDialog</a>
+    <p>Uma caixa de diálogo é uma pequena janela que leva o usuário a tomar uma decisão ou inserir mais informações.
+        Elas não ocupam toda a tela e são normalmente usadas para eventos modais que exijam que usuários realizem uma
+        ação antes de continuar.</p>
+
+    <label class="imageZoom"><input type="checkbox"><img src="../imgs/ArlertDialog.png"></label>
+
+    <div class="bg1 post">
+        <code class="kotlin">
+AlertDialog(
+    onDismissRequest = { }, // ao clicar fora
+    confirmButton = { },
+    text = { }
+)
+    </code>
+    </div>
+
+
+    <div class="">
+        <h2>Exemplo completo</h2>
+        <div class="bg1">
+            <code class="kotlin">
+            @Composable
+fun AlertDialogExample1(){
+    var showDialog by remember { mutableStateOf(false) }
+
+    Button(onClick = { showDialog = true }) {
+        Text("Abrir")
+    }
+
+    if (showDialog) {
+        AlertDialog(
+            onDismissRequest = { showDialog = false },
+            confirmButton = {
+                TextButton(onClick = { showDialog = false }) {
+                    Text("Confirmar")
+                }
+            },
+            text = { Text("Milkshake") }
+        )
+    }
+}
+        </code>
+        </div>
+    </div>
+</section>

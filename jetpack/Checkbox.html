@@ -1,0 +1,64 @@
+<section class="post">
+    <h1>Checkbox</h1>
+    <a target="_blank" href="https://m3.material.io/components/checkbox">Checkbox</a>
+
+    <div class="example-crop-image">
+        <img src="./imgs/example_textfield.png">
+    </div>
+
+    <!-- bloco -->
+    <h2>Estrutura básica</h2>
+    <div class="bg1 post">
+        <code class="kotlin">
+Checkbox(
+    checked = true,
+    onCheckedChange = {  }
+)
+Text("Option 0")
+</code>
+
+    </div>
+
+    <!-- bloco -->
+    <h2>Estrutura com estado</h2>
+    <div class="bg1 post">
+        <code class="kotlin">
+       var checked by remember { mutableStateOf(true) }
+
+Row(verticalAlignment = Alignment.CenterVertically){
+    Checkbox(
+        checked = checked,
+        onCheckedChange = { checked = it }
+    )
+    Text("Option 0")
+}
+    </code>
+    </div>
+
+    <!-- bloco -->
+    <h2>Múltiplos checks</h2>
+    <div class="bg1 post">
+        <code class="kotlin">
+val caixasStates = remember { mutableStateListOf(false, false, false) }
+
+caixasStates.forEachIndexed { index, checked ->
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+    ) {
+        Text("Valor ${index + 1}")
+        Checkbox(
+            checked = checked,
+            onCheckedChange = { isChecked ->
+                caixasStates[index] = isChecked
+            }
+        )
+    }
+}
+
+if(caixasStates[0]){ Text("Cat") }
+if(caixasStates[1]){ Text("Dog") }
+if(caixasStates[2]){ Text("Cow") }
+    </code>
+    </div>
+
+</section>
