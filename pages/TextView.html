@@ -2,27 +2,31 @@
 <p>O TextView é um componente do Android usado para exibir textos na tela para o usuário, permitindo personalizar
     aspectos como tamanho da fonte, cor, estilo e alinhamento.</p>
 
-<section class="post bg1">
+<section class="post">
+    <div class="bg1">
+        <code class="xml">
+&lt;TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/montserrat"
+    android:textColor="@color/carrot"
+    android:paddingLeft="10dp"
+    android:textStyle="italic"
+    android:paintFlags="underline"
+    android:text="Testing" 
+/>
+        </code>
+    </div>
+    <hr />
+    <div class="bg1">
+        <code class="java">
+TextView textView = findViewById(R.id.TextView);
 
-    <!-- parte 1 -->
-    <section>
-        <button class="choice-btn btn-selected">XML</button>
-        <button class="choice-btn">JETPACK</button>
-        <section class="choice choice-0">
-            <div><main lang="xml" class="code" src="./xml/TextView.xml"></main></div>
-            <div><main lang="kotlin" class="code" src="./jetpack/TextView.kt"></main></div>
-        </section>
-    </section>
+String name = textView.getText().toString();
 
-    <!-- parte 2 -->
-     <section>
-        <button class="choice-btn btn-selected">JAVA</button>
-        <button class="choice-btn">KOTLIN</button>
-        <section class="choice choice-0">
-            <div><main lang="java" class="code" src="./javaCode/TextView.java"></main></div>
-            <div><main lang="kotlin" class="code" src="./kotlinCode/TextView.kt"></main></div>
-        </section>
-    </section>
- 
- 
+textView.setText("John Doe");
+        </code>
+    </div>
 </section>
+ 

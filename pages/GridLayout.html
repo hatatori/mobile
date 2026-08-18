@@ -2,61 +2,37 @@
 <p>O GridLayout é um componente do Android usado para organizar elementos na tela em linhas e colunas, permitindo
     definir a posição e o tamanho de cada componente.</p>
 
-<section class="post bg1">
-
-<section>
-    <button class="choice-btn btn-selected">XML</button>
-    <button class="choice-btn">JETPACK</button>
-    <button class="choice-btn">JETPACK</button>
-    <section class="choice choice-0">
-        <div><main lang="xml" class="code" src="./xml/GridLayout.xml"></main></div>
-        <div><main lang="kotlin" class="code" src="./jetpack/Grid.kt"></main></div>
-        <div><main lang="kotlin" class="code" src="./jetpack/Grid2.kt"></main></div>
-    </section>
-</section>
- 
-<hr>
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="GridLayout-Example">
-    <div class="square"><img src="./imgs/cachorro.jpg"></div>
-    <div class="square"><img src="./imgs/cavalo.jpg"></div>
-    <div class="square"><img src="./imgs/coelho.jpg"></div>
-    <div class="square"><img src="./imgs/gato.jpg"></div>
-    <div class="square"><img src="./imgs/passaro.jpg"></div>
-    <div class="square"><img src="./imgs/peixe.jpg"></div>
-    <div class="square"><img src="./imgs/tigre.jpg"></div>
-    <div class="square"><img src="./imgs/aranha.jpg"></div>
-    <div class="square"><img src="./imgs/urso.jpg"></div>
+<div class="example-crop-image">
+    <img src="./imgs/example_grid.png">
 </div>
 
-<hr>
+<section class="post">
 
-<section class="options">
+<section class="bg1">
+<code class="xml">
+&lt;GridLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:columnCount="3"
+    android:padding="10dp">
 
-    <button class="btn btnOption" value="java">JAVA</button>
-    <button class="btn btnOption" value="kotlin">KOTLIN</button>
+    &lt;ImageView ... />
+    &lt;ImageView ... />
+    &lt;ImageView ... />
+    &lt;ImageView ... />
+    &lt;ImageView ... />
+    &lt;ImageView ... />
+    &lt;ImageView ... />
+    &lt;ImageView ... />
+    &lt;ImageView ... />
 
-    <div class="optionItem java" style="display: block;">
-        <h2>JAVA</h2>
-        <main lang="java" class="code" src="./javaCode/TextView.java"></main>
-    </div>
+&lt;/GridLayout>
+</code>
+</section>
+    
+<!-- https://pluu.github.io/blog/android/io22/2022/06/19/io22-Lazy-layouts-in-Compose/ -->
 
 
-    <div class="optionItem kotlin">
-        <h2>KOTLIN</h2>
-        <main lang="kotlin" class="code" src="./kotlinCode/TextView.kt"></main>
-    </div>
-
+ 
 </section>
 </section>

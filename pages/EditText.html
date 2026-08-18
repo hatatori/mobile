@@ -1,64 +1,30 @@
 <h1>&lt;EditText/></h1>
-<p>O EditText ( TextField ) é um componente do Android usado para permitir que o usuário digite e edite textos na tela, possibilitando
-    personalizar aspectos como tipo de entrada, tamanho da fonte, cor, texto de exemplo e estilo.</p>
+ 
+<section class="post">
+    <p>O EditText ( TextField ) é um componente do Android usado para permitir que o usuário digite e edite textos na
+        tela, possibilitando personalizar aspectos como tipo de entrada, tamanho da fonte, cor, texto de exemplo e
+        estilo.</p>
+    <div class="example-crop-image">
+        <img width="100%" src="./imgs/example_textfield.png">
+    </div>
+    <div class="post bg1">
+        <code class="xml">
+            &lt;EditText
+    android:id="@+id/editTextText2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:inputType="text"
+    android:hint="Digite seu nome"
+/>
+        </code>
+    </div>
+    <div class="post bg1">
+        <code class="java">
+            EditText nome = findViewById(R.id.editTextNome);
 
-
-<div class="example-crop-image">
-    <img src="./imgs/example_textfield.png">
-</div>
-
-<section class="post bg1">
-
-    <section>
-        <button class="choice-btn btn-selected">XML</button>
-        <button class="choice-btn">KOTLIN</button>
-        <section class="choice choice-0">
-            <div><main lang="xml" class="code" src="./xml/EditText.xml"></main></div>
-            <div><main lang="kotlin" class="code" src="./jetpack/EditText.kt"></main></div>
-        </section>
-    </section>
-
-    <section>
-        <button class="choice-btn btn-selected">XML</button>
-        <button class="choice-btn">KOTLIN</button>
-        <section class="choice choice-0">
-            <div><main lang="java" class="code" src="./javaCode/EditText.java"></main></div>
-            <div><main lang="kotlin" class="code" src="./kotlinCode/EditText.kt"></main></div>
-        </section>
-    </section>
-<!-- 
-    <section class="options">
-
-        <button class="btn btnOption" value="xml">XML</button>
-        <button class="btn btnOption" value="jetpack">JETPACK</button>
-
-        <div class="optionItem xml" style="display: block;">
-            <h2>XML</h2>
-            <main lang="xml" class="code" src="./xml/EditText.xml"></main>
-        </div>
-
-        <div class="optionItem jetpack">
-            <h2>JETPACK COMPOSE</h2>
-            <main lang="kotlin" class="code" src="./jetpack/EditText.kt"></main>
-        </div>
-
-    </section>
-
-    <section class="options">
-
-        <button class="btn btnOption" value="java">JAVA</button>
-        <button class="btn btnOption" value="kotlin">KOTLIN</button>
-
-        <div class="optionItem java" style="display: block;">
-            <h2>JAVA</h2>
-            <main lang="java" class="code" src="./javaCode/EditText.java"></main>
-        </div>
-
-
-        <div class="optionItem kotlin">
-            <h2>KOTLIN</h2>
-            <main lang="kotlin" class="code" src="./kotlinCode/EditText.kt"></main>
-        </div>
-
-    </section> -->
+String texto = nome.getText().toString();
+        </code>
+    </div>
 </section>
+ 

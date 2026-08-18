@@ -1,33 +1,77 @@
 <h1>&lt;Button/></h1>
 <a target="_blank" href="https://m3.material.io/components/buttons/overview">Button</a>
-<p>O Button é um componente do Android usado para criar botões interativos, permitindo que o usuário execute uma ação ao clicar, como enviar dados, abrir uma tela ou realizar uma operação.</p>
 
-<div class="example-crop-image">
-    <img src="./imgs/example_button.png">
-</div>
+<section class="post">
+    <p>O Button é um componente do Android usado para criar botões interativos, permitindo que o usuário execute uma ação ao clicar, como enviar dados, abrir uma tela ou realizar uma operação.</p>
+    <div class="example-crop-image">
+        <img  src="./imgs/example_button.png">
+    </div>
+    <div class="post bg1">
+        <code class="xml">
+            &lt;Button
+    android:id="@+id/btn"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="Entrar"
+    android:textSize="16sp"
+    android:textColor="@android:color/white"
+    android:backgroundTint="#2196F3" 
+    android:drawableStart="@drawable/ic_login"
+/>
+        </code>
+    </div>
+    <div class="post bg1">
+        <code class="java">
+            Button botao = findViewById(R.id.btn);
 
-
-<section class="post bg1">
-
-    <section>
-        <button class="choice-btn btn-selected">JAVA</button>
-        <button class="choice-btn">KOTLIN</button>
-        <section class="choice choice-0">
-            <div><main lang="xml" class="code" src="./xml/Button.xml"></main></div>
-            <div><main lang="kotlin" class="code" src="./jetpack/Button.kt"></main></div>
-        </section>
-    </section>
-
-    <section>
-        <button class="choice-btn btn-selected">JAVA</button>
-        <button class="choice-btn">KOTLIN</button>
-        <section class="choice choice-0">
-            <div><main lang="java" class="code" src="./javaCode/Button.java"></main></div>
-            <div><main lang="kotlin" class="code" src="./kotlinCode/Button.kt"></main></div>
-        </section>
-    </section>
-  
-
+botao.setOnClickListener(v -> {
+    String nome = editTextNome.getText().toString();
+    Toast.makeText(this, "Olá, " + nome, Toast.LENGTH_SHORT).show();
+});
+        </code>
+    </div>
 </section>
+
+<h1>&lt;EditText/></h1>
+ 
+<section class="post">
+    <p>O EditText ( TextField ) é um componente do Android usado para permitir que o usuário digite e edite textos na
+        tela, possibilitando personalizar aspectos como tipo de entrada, tamanho da fonte, cor, texto de exemplo e
+        estilo.</p>
+    <div class="example-crop-image">
+        <img width="100%" src="./imgs/example_textfield.png">
+    </div>
+    <div class="post bg1">
+        <code class="xml">
+            &lt;EditText
+    android:id="@+id/editTextText2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:inputType="text"
+    android:hint="Digite seu nome"
+/>
+        </code>
+    </div>
+    <div class="post bg1">
+        <code class="java">
+            EditText nome = findViewById(R.id.editTextNome);
+
+String texto = nome.getText().toString();
+        </code>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
 
     

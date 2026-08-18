@@ -6,99 +6,28 @@
     atributo `android:src`</p>
 <img src="./imgs/passaro.jpg" >
 
+<section class="post">
+
 <section class="post bg1">
-
-
-    <section>
-        <button class="choice-btn btn-selected">XML</button>
-        <button class="choice-btn">JETPACK</button>
-        <button class="choice-btn">JETPACK</button>
-        <section class="choice choice-0">
-            <div><main lang="xml" class="code" src="./xml/ImageView.xml"></main></div>
-            <!-- <div><main lang="kotlin" class="code" src="./jetpack/Image.kt"></main></div> -->
-             
-
-<div>
-    <p>offline</p>
-    <div class="bg1">
-        <code class="kotlin">Image(
-    painter = painterResource(R.drawable.my_image),
-    contentDescription = "Desc",
-    modifier = Modifier.size(100.dp)
-)</code>
-    </div>
-</div>
-
-<!-- bloco 2 -->
-<div>
-    <p>online</p>
-    <div class="bg1">
-<code class="kotlin">
-AsyncImage(
-    model = "https://exemplo.com/foto.jpg",
-    contentDescription = "Desc",
-    modifier = Modifier.size(100.dp)
-)</code>
-    </div>
-</div>
-            </section>
+        <code class="xml">
+            &lt;ImageView
+    android:id="@+id/imageView"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:src="@drawable/avatar" 
+/>
+        </code>
     </section>
- 
-
-    <hr>
-
-    <section>
-        <button class="choice-btn btn-selected">JAVA</button>
-        <button class="choice-btn">JAVA</button>
-        <button class="choice-btn">KOTLIN</button>
-        <button class="choice-btn">KOTLIN</button>
-        <section class="choice choice-0">
-            <div>
-                <p>offline</p>
-                <div class="bg1">
-                    <code class="java">ImageView imageView = findViewById(R.id.imageView);
-                        
-imageView.setImageResource(R.drawable.outra_imagem);</code>
-                </div>
-            </div>
-            <div>
-                <p>online</p>
-                <div class="bg1">
-                    <code class="java">ImageView imageView = findViewById(R.id.imageView);
-                        
-Glide
-    .with(this)
-    .load("https://exemplo.com/foto.jpg")
-    .into(imageView);</code>
-                </div>
-            </div>
-            <!-- <div><main lang="java" class="code" src="./javaCode/ImageView.java"></main></div> -->
-            <!-- <div><main lang="kotlin" class="code" src="./kotlinCode/Image.kt"></main></div> -->
-
-            <div>
-                <p>offline</p>
-                <div class="bg1">
-                    <code class="kotlin">val imageView = findViewById&lt;ImageView>(R.id.imageView)
-
-imageView.setImageResource(R.drawable.outra_imagem)</code>
-                </div>
-            </div>
-            <div>
-                <p>online</p>
-                <div class="bg1">
-                    <code class="kotlin">val imageView = findViewById&lt;ImageView>(R.id.imageView)
-
-Glide.with(this)
-    .load("https://exemplo.com/foto.jpg")
-    .into(imageView)</code>
-                </div>
-            </div>
-
-        </section>
+<section class="post bg1">
+        <code class="java">
+ImageView imageView = findViewById(R.id.imageView);
+            
+imageView.setImageResource(R.drawable.outra_imagem);
+        </code>
     </section>
-
 
 </section>
+
 
 
 <!-- parte1 -->

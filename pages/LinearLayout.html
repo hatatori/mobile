@@ -7,33 +7,32 @@
 <pre><code class="language-java" src="./java/LinearLayout.java" ></code></pre> -->
 
 
-<section class="post bg1">
+<section class="post">
 
-    <section>
-        <button class="choice-btn btn-selected">XML</button>
-        <button class="choice-btn">JETPACK</button>
-        <section class="choice choice-0">
-            <div><main lang="xml" class="code" src="./xml/LinearLayout.xml"></main></div>
-            <div><main lang="kotlin" class="code" src="./jetpack/LinearLayout.kt"></main></div>
-        </section>
-    </section>
- 
+    <div class="bg1">
+        <code class="xml">
+&lt;LinearLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:paddingLeft="16dp"
+android:paddingRight="16dp"
+android:orientation="horizontal" >
+
+    &lt;TextView ... />
+    &lt;TextView ... />
+    &lt;TextView ... />
+
+&lt;/LinearLayout>
+        </code>
+    </div>
+  
 
     <h2>Orientation</h2>
 
-    <h3>Vertical</h3>  
-    <section class="LinearLayout LinearLayout-Vertical">
-        <div class="LinearLayout-square"><img src="./imgs/rato.jpg"></div>
-        <div class="LinearLayout-square"><img src="./imgs/tartaruga.jpg"></div>
-        <div class="LinearLayout-square"><img src="./imgs/mico.jpg"></div>
-    </section>
+    <div class="example-crop-image">
+        <img width="100%" src="./imgs/example_rowcolumn.png">
+    </div>
 
-    <h3>Horizontal</h3>
-    <section class="LinearLayout LinearLayout-Horizontal">
-        <div class="LinearLayout-square"><img src="./imgs/rato.jpg"></div>
-        <div class="LinearLayout-square"><img src="./imgs/tartaruga.jpg"></div>
-        <div class="LinearLayout-square"><img src="./imgs/mico.jpg"></div>
-    </section>
  
 
     
