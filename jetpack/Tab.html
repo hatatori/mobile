@@ -1,0 +1,93 @@
+<h1>Tabs</h1>
+<a target="_blank" href="https://m3.material.io/components/tabs/overview">Tabs</a>
+
+<!-- example_tabs -->
+
+<div class="example-crop-image">
+    <img width="100%" src="./imgs/example_tabs.png">
+</div>
+
+<div class="bg1 post">
+    <code class="kotlin">
+@Composable
+fun SimpleTabs() {
+
+    var selectedTab by remember { mutableStateOf(0) }
+
+    Column(modifier = Modifier.fillMaxSize()) {
+        PrimaryTabRow(selectedTabIndex = selectedTab) {
+
+            Tab(
+                selected = selectedTab == 0,
+                onClick = { selectedTab = 0 },
+                text = { Text("Aba 1") }
+            )
+
+            Tab(
+                selected = selectedTab == 1,
+                onClick = { selectedTab = 1 },
+                text = { Text("Aba 2") }
+            )
+
+            Tab(
+                selected = selectedTab == 2,
+                onClick = { selectedTab = 2 },
+                text = { Text("Aba 3") }
+            )
+        }
+
+        when (selectedTab) {
+            0 -> Text("Conteúdo da Aba 1")
+            1 -> Text("Conteúdo da Aba 2")
+            2 -> Text("Conteúdo da Aba 3")
+        }
+    }
+}
+</code>
+</div>
+
+<div class="bg1 post">
+    <code class="kotlin">
+@Composable
+fun SimpleTabsForEach() {
+
+    var selectedTab by remember { mutableStateOf(0) }
+    val titles = listOf("Aba 1", "Aba 2", "Aba 3")
+
+    Column(modifier = Modifier.fillMaxSize()) {
+        PrimaryTabRow(selectedTabIndex = selectedTab) {
+            titles.forEachIndexed { index, title ->
+                Tab(
+                    selected = selectedTab == index,
+                    onClick = { selectedTab = index },
+                    text = { Text(title) }
+                )
+            }
+        }
+
+        when (selectedTab) {
+            0 -> Text("Conteúdo da Aba 1")
+            1 -> Text("Conteúdo da Aba 2")
+            2 -> Text("Conteúdo da Aba 3")
+        }
+    }
+}
+</code>
+</div>
+
+<h2>Adicionando Icone</h2>
+<div class="bg1">
+    <code class="kotlin">
+Tab(
+    selected = {  },
+    onClick = { },
+    text = { },
+    icon = {
+        Icon(
+            imageVector = Icons.Filled.Search,
+            contentDescription = null
+        )
+    }
+)
+    </code>
+</div>
