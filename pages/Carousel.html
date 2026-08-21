@@ -1,0 +1,162 @@
+<div class="post">
+    <h1>Carousel</h1>
+<a target="_blank" href="https://m3.material.io/components/carousel/overview">Carousel</a>
+<p>Um carrossel mostra uma lista rolável de itens que se adaptam dinamicamente com base no tamanho da janela.</p>
+
+<video width="100%" src="./imgs/example_carousel.mp4" loop autoplay controls></video>
+</div>
+
+
+
+
+<div class="post">
+<h2>Simples</h2>
+<div class="bg1 post">
+    <code class="kotlin">
+@Composable
+fun Carousel() {
+ 
+    HorizontalMultiBrowseCarousel(
+        state = rememberCarouselState { 5 },
+        preferredItemWidth = 186.dp,
+        itemSpacing = 8.dp
+    ) {
+        
+        Image(
+            painter = painterResource(pics[i]),
+            contentDescription = null
+        )
+         
+        ...
+    }
+}
+</code>
+</div>
+</div>
+
+
+<div class="post">
+    <h2>Com arraylist</h2>
+    <div class="bg1">
+        <code class="kotlin">
+@Composable
+fun Carousel() {
+
+    val pics = listOf(
+        R.drawable.one,
+        R.drawable.two,
+        R.drawable.three,
+        R.drawable.four,
+        R.drawable.five,
+    )
+
+    HorizontalMultiBrowseCarousel(
+        state = rememberCarouselState { pics.count() },
+        preferredItemWidth = 186.dp,
+        itemSpacing = 8.dp
+    ) {
+        i ->
+            Image(
+                modifier = Modifier
+                    .height(205.dp)
+                    .maskClip(MaterialTheme.shapes.extraLarge),
+                painter = painterResource(pics[i]),
+                contentDescription = null,
+                contentScale = ContentScale.Crop
+            )
+    }
+}
+</code>
+    </div>
+</div>
+
+
+<div class="post">
+<h2>Com modifier</h2>
+<div class="bg1 post">
+    <code class="kotlin">
+@Composable
+fun Carousel() {
+
+    val pics = listOf(
+        R.drawable.one,
+        R.drawable.two,
+        R.drawable.three,
+        R.drawable.four,
+        R.drawable.five,
+    )
+
+    HorizontalMultiBrowseCarousel(
+        state = rememberCarouselState { pics.count() },
+        modifier = Modifier
+            .fillMaxWidth()
+            .wrapContentHeight()
+            .padding(top = 16.dp, bottom = 16.dp),
+        preferredItemWidth = 186.dp,
+        itemSpacing = 8.dp,
+        contentPadding = PaddingValues(horizontal = 16.dp)
+    ) {
+        i ->
+
+            Image(
+                modifier = Modifier
+                    .height(205.dp)
+                    .maskClip(MaterialTheme.shapes.extraLarge),
+                painter = painterResource(pics[i]),
+                contentDescription = null,
+                contentScale = ContentScale.Crop
+            )
+
+    }
+}
+</code>
+</div>
+</div>
+
+<div class="post">
+<h2>Com modifier e classe completa</h2>
+<div class="bg1 post">
+    <code class="kotlin">
+@Composable
+fun Carousel() {
+    
+    data class CarouselItem(
+        val id: Int,
+        @DrawableRes val imageResId: Int,
+        val contentDescription: String
+    )
+
+    val items = remember {
+        listOf(
+            CarouselItem(0, R.drawable.one, "cupcake"),
+            CarouselItem(1, R.drawable.two, "donut"),
+            CarouselItem(2, R.drawable.three, "eclair"),
+            CarouselItem(3, R.drawable.four, "froyo"),
+            CarouselItem(4, R.drawable.five, "gingerbread"),
+        )
+    }
+
+    HorizontalMultiBrowseCarousel(
+        state = rememberCarouselState { items.count() },
+        modifier = Modifier
+            .fillMaxWidth()
+            .wrapContentHeight()
+            .padding(top = 16.dp, bottom = 16.dp),
+        preferredItemWidth = 186.dp,
+        itemSpacing = 8.dp,
+        contentPadding = PaddingValues(horizontal = 16.dp)
+    ) { i ->
+        val item = items[i]
+        Image(
+            modifier = Modifier
+                .height(205.dp)
+                .maskClip(MaterialTheme.shapes.extraLarge),
+            painter = painterResource(id = item.imageResId),
+            contentDescription = item.contentDescription,
+            contentScale = ContentScale.Crop
+        )
+    }
+}
+</code>
+</div>
+</div>
