@@ -1,0 +1,46 @@
+<h1>Escopo de recomposição</h1>
+<p>(Recomposition Scope)</p>
+<div class="bg1 post">
+    <code class="kotlin">
+    @Composable
+fun Screen() {
+
+    var value by remember { mutableStateOf(0) }
+
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center,
+        modifier = Modifier
+        .fillMaxSize()
+    ){
+        ButtonNotification( { value++ } )
+        MessageNotification(value)
+    }
+} 
+</code>
+</div>
+<div class="bg1 post">
+    <code class="kotlin"> 
+@Composable
+fun ButtonNotification(increment: () -> Unit){
+    Button(
+        onClick = { increment() }
+    ) { Text("Agora vai") }
+}
+ 
+</code>
+</div>
+<div class="bg1 post">
+    <code class="kotlin">  
+@Composable
+fun MessageNotification(numero: Int){
+    Row(verticalAlignment = Alignment.CenterVertically){
+        Icon(
+            imageVector = Icons.Filled.Person,
+            contentDescription = null
+        )
+        Text(text= "O valor é: $numero" )
+    }
+} 
+</code>
+</div> 
