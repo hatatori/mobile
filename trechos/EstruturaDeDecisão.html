@@ -1,0 +1,74 @@
+<h1>Estrutura de decisão</h1>
+<section class="post bg1">
+
+    <!-- exemplo 1 -->
+    <code class="java">
+int idade = 20;
+
+if (idade >= 18) {
+    System.out.println("Maior de idade");
+}
+</code>
+</section>
+
+<section class="post bg1">
+    <!-- exemplo 2 -->
+    <code class="java">
+int idade = 16;
+
+if (idade >= 18) {
+    System.out.println("Maior de idade");
+} else {
+    System.out.println("Menor de idade");
+}
+</code>
+</section>
+
+<section class="post bg1">
+    <!-- exemplo 3 -->
+    <code class="java">
+int nota = 8;
+
+if (nota >= 9) {
+    System.out.println("Excelente");
+} else if (nota >= 7) {
+    System.out.println("Aprovado");
+} else if (nota >= 5) {
+    System.out.println("Recuperação");
+} else {
+    System.out.println("Reprovado");
+}
+
+// nota >= 9 → Excelente
+// nota >= 7 → Aprovado
+// nota >= 5 → Recuperação
+// senão     → Reprovado
+</code>
+</section>
+
+<section class="post bg1">
+    <code class="java">
+String login = "admin";
+String password = "1234";
+
+if (login.equals("admin") && password.equals("1234")) {
+    System.out.println("Login realizado com sucesso!");
+} else {
+    System.out.println("Login ou senha incorretos.");
+}
+</code>
+</section>
+
+
+<section class="post bg1">
+    <code class="java">
+int opcao = 2;
+
+switch (opcao) {
+    case 1: System.out.println("Cadastrar"); break;
+    case 2: System.out.println("Consultar"); break;
+    case 3: System.out.println("Excluir"); break;
+    default: System.out.println("Opção inválida");
+}
+</code>
+</section>

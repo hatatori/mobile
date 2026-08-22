@@ -1,0 +1,46 @@
+<section>
+    <h1>Icons</h1>
+    <a target="_blank" href="https://fonts.google.com/icons">Icons</a>
+
+    <div class="example-crop-image">
+        <img width="100%" src="./imgs/example_icons.png">
+    </div>
+
+    <p>Adicione depedência em `build.gradle.kts (Module :app)` </p>
+
+    <h2>Depedência</h2>
+    <div class="bg1 post">
+        <code class="kotlin">dependencies {
+    implementation("androidx.compose.material:material-icons-core")
+    implementation("androidx.compose.material:material-icons-extended")
+}</code>
+    </div>
+
+    <h2>Exemplo</h2>
+    <div class="bg1 post">
+        <code class="kotlin">Icon(
+    imageVector = Icons.Filled.Home,
+    contentDescription = "Descrição"
+)</code>
+    </div>
+    <div class="bg1 post">
+        <code class="kotlin">IconButton(onClick = { /* ação */ }) {
+    Icon(
+        imageVector = Icons.Filled.Home,
+        contentDescription = "Descrição"
+    )
+}</code>
+    </div>
+
+    <div class="bg1">
+        <ul class="list-style-2">
+            <li>Icons.Filled.XXX (preenchido)</li>
+            <li>Icons.Outlined.XXX (contorno)</li>
+            <li>Icons.Rounded.XXX (arredondado)</li>
+            <li>Icons.Sharp.XXX (pontudo)</li>
+            <li>Icons.TwoTone.XXX (dois tons)</li>
+        </ul>
+    </div>
+
+
+</section>

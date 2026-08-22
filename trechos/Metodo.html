@@ -1,0 +1,90 @@
+<!-- post -->
+<h1>Método</h1>
+<p>Um método é um bloco de código que executa uma tarefa específica com ou sem retorno.</p>
+<section class="post bg1">
+    <code class="java">
+public void DizerMarca(){
+    System.out.println("Eu sou da marca Toyota");
+}
+</code>
+</section>
+
+<p>Um método deve está contido dentro de uma classe.</p>
+<section class="post bg1">
+    <code class="java">
+public class Carro{
+    public void DizerMarca(){
+        System.out.println("Eu sou da marca Toyota");
+    }
+}
+</code>
+</section>
+
+<p>A variável `carro` recebe a referência de um novo objeto Carro, que é instanciado pelo `new Carro()`.</p>
+<p>A variável carro acessa o objeto Carro e executa o método DizerMarca().</p>
+
+<section class="post bg1">
+    <code class="java">
+
+Carro carro = new Carro();
+
+carro.DizerMarca();
+</code>
+</section>
+
+<h2>Métodos com parâmetro</h2>
+<p>Métodos com parâmetro são métodos que recebem valores como entrada para usar durante sua execução.</p>
+<section class="post bg1">
+    <code class="java">
+public class Matematica {
+    public double soma(double a, double b){
+        return a+b;
+    }
+
+    public double subtracao(double a, double b){
+        return a-b;
+    }
+
+    public double multiplicacao(double a, double b){
+        return a*b;
+    }
+
+    public double divisao(double a, double b){
+        return a/b;
+    }
+}
+</code>
+</section>
+<section class="post bg1">
+    <code class="java">
+Matematica math = new Matematica();
+
+Double n1 = math.soma(10, 10);
+Double n2 = math.subtracao(10, 10);
+Double n3 = math.multiplicacao(10, 10);
+Double n4 = math.divisao(10, 10);
+
+System.out.println( n1 ); // 20.0
+System.out.println( n2 ); // 0.0
+System.out.println( n3 ); // 100.0
+System.out.println( n4 ); // 1.0
+</code>
+</section>
+
+
+<h2>Static</h2>
+<p>static permite chamar o método diretamente pela classe, sem criar um objeto:</p>
+<section class="post bg1">
+    <code class="java">
+public class Moto{
+    public static void DizerMarca(){
+        System.out.println("Eu sou da marca Mitsubishi");
+    }
+}
+</code>
+</section>
+<section class="post bg1">
+    <code class="java">
+Moto.DizerMarca()
+</code>
+</section>

@@ -54,6 +54,9 @@ h4,
 h5 {
     margin-top: 10px;
     margin-bottom: 10px;
+    
+    /* font-weight: 100;  */
+    font-family: 'JetBrains Mono';
 }
 
 h1{
@@ -85,14 +88,19 @@ hr {
 
 /* BTN */
 .btn, .choice-btn {
-    border: solid 1px var(--lime);
     padding: 3px 20px;
     margin: 5px 0;
     display: inline-block;
     background-color: transparent;
     color: white;
     font-size: 1em;
-    color: var(--lime);
+    border: solid 1px var(--lime);
+    color: var(--lime); 
+}
+
+.choice-btn{
+    border: solid 1px var(--grayD);
+    color: var(--grayD);
 }
 
 .btn:hover, .choice-btn:hover {
@@ -105,13 +113,14 @@ hr {
 .btn-selected {
     background-color: var(--lime);
     color: var(--grayA);
+    border: solid 1px var(--lime);
 }
 
 .btn-selected:hover {
     /* background-color: var(--lime); */
     color: var(--grayB);
 }
-
+ 
 /* input[name=option-btn]{display: none;}
 
 input[name=option-btn]:checked + .btn{
@@ -170,9 +179,9 @@ input[name=option-btn]:checked + .btn{
     width: 900px;
     max-width: 100%;
     margin: auto;
-    padding: 1em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+    /* padding: 1em; */
+    /* margin-top: 1em; */
+    /* margin-bottom: 1em; */
 }
 
 /* .post:last-child, .postSimple:last-child{
@@ -431,4 +440,22 @@ input[name=option-btn]:checked + .btn{
     color: #6750a4;
     background-color: white;
     padding: 10px;
+}
+
+/* TABLE */
+.table-style-1{
+    /* background-color: red; */
+    /* width: 100%; */
+    border-collapse: collapse;
+}
+.table-style-1 td{
+    /* padding: 5px; */
+}
+
+.table-style-1 td{
+    padding: 10px;
+    padding-right: 100px;
+    /* width: 200px; */
+    /* background-color: red; */
+    border: solid 1px var(--grayB);
 }

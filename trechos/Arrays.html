@@ -1,0 +1,89 @@
+<h1>Arrays</h1>
+<p>Um array é uma estrutura que guarda vários valores do mesmo tipo em uma única variável.</p>
+<section class="post bg1">
+    <code class="java">
+int[] numeros = {10, 20, 30, 40, 50};
+
+ou
+
+int[] numeros = new int[]{10, 20, 30, 40, 50};
+</code>
+</section>
+
+<!-- parte -->
+<h2>Percorrendo um array</h2>
+<section class="post bg1">
+    <code class="java">
+int[] numeros = {10, 20, 30, 40};
+
+for (int i = 0; i < numeros.length; i++) {
+    System.out.println(numeros[i]);
+}
+
+// ou
+
+for (int numero : numeros) {
+    System.out.println(numero);
+}
+</code>
+</section>
+
+
+
+<!-- post -->
+<h2>List</h2>
+<section class="post bg1">
+    <code class="java">
+List → coleção ordenada
+Set → coleção sem duplicatas
+Map → chave e valor
+Queue → fila 
+</code>
+</section>
+
+<!-- post -->
+<h2>Mutabilidade</h2>
+<section class="post bg1">
+    <code class="java">
+// Lista imutável
+List&lt;String> names = List.of("Dog", "Cat", "Bird", "Dog");
+
+// Lista mutável
+List&lt;String> names = new ArrayList<>(List.of("Dog", "Cat", "Bird", "Dog"));
+
+// Acessar elemento
+names.get(0);        // "Dog"
+names.get(1);        // "Cat"
+names.size();        // 4
+names.isEmpty();     // false
+
+// Pesquisa
+names.contains("Dog");       // true
+names.indexOf("Cat");      // 1
+names.indexOf("Bear");       // -1
+names.lastIndexOf("Dog");    // 0
+
+// Criar nova lista
+List&lt;String> upper = names.stream().map(String::toUpperCase).toList();
+
+</code>
+</section>
+
+<!-- post -->
+<section class="post bg1">
+    <h2>Hashmap</h2>
+    <code class="java">
+HashMap&lt;String, Integer> animals = new HashMap<>();
+  
+animals.put("Dog", 4);
+animals.put("Cat", 4);
+animals.put("Bird", 2);
+animals.put("Snake", 0);
+
+// {Snake=0, Bird=2, Cat=4}
+
+animals.get("Dog"); // 4 
+animals.put("Dog", 3); // alteração
+animals.remove("Dog"); // remove
+</code>
+</section>

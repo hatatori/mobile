@@ -1,0 +1,49 @@
+
+    <!-- post -->
+    <h1>Herança</h1>
+    <p>A herança permite que uma classe herde características e métodos de outra, facilitando a reutilização de código.
+        Usa-se a palavra-chave extends.</p>
+    <section class="post bg1">
+        <code class="java">
+class Animal {
+    void comer() {
+        System.out.println("Está comendo");
+    }
+}
+</code>
+    </section>
+    <section class="post bg1">
+        <code class="java">
+class Cachorro extends Animal {
+    void latir() {
+        System.out.println("Au au!");
+    }
+}
+</code>
+    </section>
+    <section class="post bg1">
+        <code class="java">
+class Gato extends Animal {
+    void miar() {
+        System.out.println("Miau!");
+    }
+}
+</code>
+    </section>
+
+    <pre>Animal
+ ├── Cachorro
+ └── Gato</pre>
+    <p>gato e cachorro recebem o método .comer() herdada da classe Animal</p>
+    <section class="post bg1">
+        <code class="java">
+Cachorro cachorro = new Cachorro();
+Gato gato = new Gato();
+
+cachorro.comer();
+gato.comer();
+
+cachorro.latir();
+gato.miar();
+</code>
+    </section>

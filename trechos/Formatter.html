@@ -1,0 +1,20 @@
+<!-- bloco -->
+<section >
+    <h2>Formatter</h2>
+    <div class="bg1">
+        <code class="java">
+LocalDateTime dataHora = LocalDateTime.of(2026, 8, 21, 15, 30);
+
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/YYYY hh:mm:ss");
+
+dataHora.format(formatter);
+        </code>
+    </div>
+
+    <h3>Formatando datas inverso</h3>
+    <div class="bg1">
+        <code class="java">
+LocalDateTime dataHoraNovamente = LocalDateTime.parse(resultado, formatter);
+        </code>
+    </div>
+</section>

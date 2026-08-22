@@ -146,6 +146,9 @@ function renderPostSimple() {
         // const tg = document.querySelector("#tg")
         const url = el.getAttribute('src')
         if (url == undefined) return
+
+        if(el.children.length > 0) return
+
         fetch(url)
             .then(e => e.text())
             .then(e => {
@@ -163,9 +166,14 @@ function renderPostSimple() {
                     renderPostCode()
                     // buttonsEventSwitchOptionWindow()
                     
-                    renderCodeTag()
+                    
                     RenderQuotes()
                     ButtonsGreen()
+                    
+                    // aqui 1
+                    // renderPostSimple()
+                    renderPostSimple()
+                    renderCodeTag()
                 }
 
 
@@ -398,5 +406,7 @@ function ButtonsGreen() {
     })
 }
 
+
 renderCodeTag()
 ButtonsGreen()
+renderCodeTag()

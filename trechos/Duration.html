@@ -1,0 +1,49 @@
+<!-- bloco -->
+<div>
+    <h2>Duration</h2>
+    <p>Diferença entre tempos.</p>
+    <div class="bg1">
+        <code class="java">
+// Representação
+Duration duration1 = Duration.ofHours(2);       // PT2H
+Duration duration2 = Duration.ofMinutes(30);    // PT30M
+Duration duration3 = Duration.ofSeconds(25);    // PT25S
+Duration duration4 = Duration.ofDays(5);        // PT120H
+Duration duration5 = Duration.ofNanos(2);       // PT0.000000002S
+
+// Adiciona tempo
+.plusDays(long);
+.plusHours(long);
+.plusSeconds(long);
+.plusMillis(long);
+.plusNanos(long);
+
+// Subtrai tempo
+.minusDays(long);
+.minusHours(long);
+.minusSeconds(long);
+.minusMillis(long);
+.minusNanos(long);
+
+// Mostra
+.toDays()
+.toHours()
+.toSeconds()
+.toMillis()
+.toNanos()
+            </code>
+    </div>
+
+    <h3>Duration</h3>
+    <p>Diferença entre tempos.</p>
+    <div class="bg1">
+        <code class="java">
+LocalTime t1 = LocalTime.of(0, 5);
+LocalTime t2 = LocalTime.of(0, 10);
+
+Duration t3 = Duration.between(t1, t2); // PT10M
+
+t3.toMinutes(); // 10
+            </code>
+    </div>
+</div>

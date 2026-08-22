@@ -1,0 +1,81 @@
+
+    <!-- post -->
+    <div class="post">
+        <h1>Abstração</h1>
+        <!-- codigo 1 -->
+
+        <p>Abstração é o princípio que consiste em esconder os detalhes complexos de implementação e mostrar apenas as
+            funcionalidades essenciais de um objeto para quem vai utilizá-lo.</p>
+
+        <p>Na prática, significa criar um modelo simplificado da realidade, focando no que é relevante para o problema
+            que
+            você está resolvendo, e ignorando os detalhes desnecessários.</p>
+        </p>
+
+
+
+        <div class="bg1 post">
+            <code class="java">
+        abstract public class Geometria {
+    abstract double calcularArea();
+    abstract double calcularPerimetro();
+} </code>
+        </div>
+        <!-- codigo 1 -->
+        <div class="bg1 post">
+            <code class="java">
+public class Quadrado extends Geometria{
+
+    double lado;
+
+    Quadrado(double lado){
+        this.lado = lado;
+    }
+
+    @Override
+    double calcularArea() {
+        return lado * lado;
+    }
+
+    @Override
+    double calcularPerimetro() {
+        return 4 * lado;
+    }
+}</code>
+        </div>
+        <!-- codigo 1 -->
+        <div class="bg1 post">
+            <code class="java">
+public class Circulo extends Geometria{
+
+    double raio;
+
+    Circulo(double raio) {
+        this.raio = raio;
+    }
+
+    @Override
+    double calcularArea() {
+        return Math.PI * this.raio * this.raio;
+    }
+
+    @Override
+    double calcularPerimetro() {
+        return 2 * Math.PI * this.raio;
+    }
+}</code>
+        </div>
+
+        <div class="bg1 post">
+            <code class="java">
+Quadrado quadrado = new Quadrado(3);
+quadrado.calcularArea();
+quadrado.calcularPerimetro();
+
+Circulo circulo = new Circulo(5);
+circulo.calcularArea();
+circulo.calcularPerimetro();
+        </code>
+        </div>
+
+    </div>

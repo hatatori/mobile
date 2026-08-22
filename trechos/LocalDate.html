@@ -1,0 +1,43 @@
+<section>
+    <h2>LocalDate</h2>
+    <p>YYYY-MM-DD</p>
+    <div class="bg1">
+        <code class="java">
+LocalDate hoje = LocalDate.now();
+LocalDate nascimento = LocalDate.of(2000, 5, 15);
+
+nascimento.getYear();
+nascimento.getMonth();
+nascimento.getMonthValue();
+nascimento.getDayOfMonth();
+        </code>
+    </div>
+
+    <p>Somando e subtraindo datas</p>
+    <div class="bg1">
+        <code class="java">
+LocalDate hoje = LocalDate.now();
+
+LocalDate diaProximo = hoje.plusDays(1);
+LocalDate mesProximo = hoje.plusMonths(1);
+LocalDate anoProximo = hoje.plusYears(1);
+LocalDate diaPassado = hoje.minusDays(1);
+LocalDate mesPassado = hoje.minusMonths(1);
+LocalDate anoPassado = hoje.minusYears(1);
+  
+        </code>
+    </div>
+
+    <p>Comparando datas</p>
+    <div class="bg1">
+        <code class="java">
+LocalDate hoje = LocalDate.now();
+LocalDate futuro = hoje.plusDays(10);
+
+hoje.isBefore(futuro); // true
+hoje.isAfter(futuro); // false
+hoje.isEqual(futuro); // false
+        </code>
+    </div>
+
+</section>

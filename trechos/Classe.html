@@ -1,0 +1,54 @@
+
+    <!-- post -->
+    <h1>Classe</h1>
+    <p>Uma classe em Java é um molde para criar objetos.</p>
+    <section class="post bg1">
+        <code class="java">
+public class NomeDaClasse { 
+    // atributos
+    // construtor
+    // métodos
+}
+</code>
+    </section>
+
+    <!-- post -->
+    <p>Abaixo uma classe completa.</p>
+    <section class="post bg1">
+        <code class="java">
+public class Pessoa {
+
+    // Atributos
+    String nome;
+    int idade;
+
+    // Construtor
+    public Pessoa(String nome, int idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    // Método
+    public void apresentar() {
+        System.out.println("Olá, meu nome é " + nome);
+        System.out.println("Tenho " + idade + " anos.");
+    }
+}
+</code>
+    </section>
+
+    <!-- post -->
+    <p>Criando um objeto da classe Pessoa.</p>
+    <section class="post bg1">
+        <code class="java">
+
+Pessoa pessoa1 = new Pessoa("Ana", 20);
+Pessoa pessoa2 = new Pessoa("Renata", 20);
+Pessoa pessoa3 = new Pessoa("Ana", 20);
+
+pessoa1.apresentar();
+pessoa2.apresentar();
+pessoa3.apresentar();
+ 
+</code>
+    </section>

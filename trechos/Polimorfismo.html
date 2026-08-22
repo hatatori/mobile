@@ -1,0 +1,42 @@
+<section class="post">
+    <h1>Polimorfismo</h1>
+
+    <p>Em Java, o polimorfismo permite que uma mesma referência seja usada para representar objetos de diferentes
+        classes, fazendo com que o comportamento executado dependa do objeto real.</p>
+
+    <!-- main -->
+    <p></p>
+    <div class="bg1">
+        <code class="java">public class Cachorro extends Animal{
+    public void fazerSom() {
+        System.out.println("Au au");
+    }
+}</code>
+    </div>
+    <p></p>
+    <div class="bg1">
+        <code class="java">public class Gato extends Animal {
+    public void fazerSom() {
+        System.out.println("Miau");
+    }
+}</code>
+    </div>
+
+    <!-- main -->
+
+    <!-- main -->
+    <p>
+    <P>As variáveis animal1 e animal2 têm o tipo Animal, mas executam o método da classe do objeto que realmente foi
+        criado (Cachorro ou Gato).</P>
+    </p>
+    <div class="bg1">
+        <code class="java">
+Animal animal1 = new Cachorro();
+Animal animal2 = new Gato();
+
+animal1.fazerSom(); // Saída: AU AU
+animal2.fazerSom(); // Saída: MIAU
+        </code>
+    </div>
+
+</section>

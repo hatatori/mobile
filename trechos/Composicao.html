@@ -1,0 +1,59 @@
+<section class="post">
+    <h1>Composição</h1>
+    <p>Composição é um conceito da Programação Orientada a Objetos em que uma classe possui um objeto de outra
+        classe
+        como parte de sua estrutura.</p>
+    <div class="bg1">
+        <code class="java">
+            class Motor {
+    void ligar() {
+        System.out.println("Motor ligado!");
+    }
+}
+        </code>
+    </div>
+    <p>A classe `Carro` recebe a classe `Motor` </p>
+    <div class="bg1">
+        <code class="java">
+            class Carro {
+    private Motor motor;
+
+    public Carro() {
+        motor = new Motor();
+    }
+
+    void ligarCarro() {
+        motor.ligar();
+        System.out.println("Carro ligado!");
+    }
+}
+        </code>
+    </div>
+    <p></p>
+    <div class="bg1">
+        <code class="java">
+Carro carro = new Carro();
+
+carro.ligarCarro();
+        </code>
+    </div>
+
+    <h3>Desafio</h3>
+    <p>Faça o código se comunicar de acordo com a composição.</p>
+    <div class="bg1">
+        <code class="java">
+            Produto celular = new Produto("Celular", 2000);
+Produto fone = new Produto("Fone", 200);
+
+ItemPedido item1 = new ItemPedido(celular, 1);
+ItemPedido item2 = new ItemPedido(fone, 2);
+
+Pedido pedidos = new Pedido();
+
+pedidos.adicionarItem(item1);
+pedidos.adicionarItem(item2);
+
+System.out.println( pedidos.calcularTotal() ); //2400
+        </code>
+    </div>
+</section>
