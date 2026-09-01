@@ -22,4 +22,30 @@ Column(){
 }
         </code>
     </div>
+    <p>Grid</p>
+    <div class="bg1  post">
+        <code class="kotlin">
+LazyVerticalGrid(
+    columns = GridCells.Fixed(2),
+    modifier = Modifier.fillMaxSize(),
+    contentPadding = PaddingValues(16.dp),
+    horizontalArrangement = Arrangement.spacedBy(8.dp),
+    verticalArrangement = Arrangement.spacedBy(8.dp)
+) {
+    items(20) { index ->
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(120.dp)
+        ) {
+            Box(
+                contentAlignment = Alignment.Center,
+                modifier = Modifier.fillMaxSize()
+            ) {
+                Text("Item $index")
+            }
+        }
+    }
+        </code>
+    </div>
 </section>

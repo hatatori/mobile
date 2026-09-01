@@ -198,7 +198,7 @@ input[name=option-btn]:checked + .btn{
     box-shadow: 0 8px 24px rgba(16, 16, 16, .06);
     color: var(--grayD);
 
-    position: sticky;
+    /* position: sticky; */
     top: 0px;
     z-index: 3;
 }
@@ -231,7 +231,7 @@ input[name=option-btn]:checked + .btn{
     border-bottom-color: var(--line);
     box-shadow: 0 8px 24px rgba(16, 16, 16, .06);
     color: var(--grayD);
-    width: 300px;
+    /* width: 300px; */
 
     position: fixed;
     left: 1em;

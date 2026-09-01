@@ -1,0 +1,64 @@
+<main class="post">
+    <h1>Inflate ( Duplicate )</h1>
+    <p>Cria várias cópias (instâncias) de um mesmo layout, permitindo alterar os dados de cada cópia individualmente.
+    </p>
+    
+
+    <section>
+        <button class="choice-btn btn-selected">JAVA 1</button>
+        <button class="choice-btn">JAVA 2</button>
+        <section class="choice choice-0">
+            <div class="bg1 post">
+        <code class="java">
+LinearLayout mainItem = findViewById(R.id.MainItem);
+
+View view = getLayoutInflater().inflate(
+        R.layout.activity_item_list,
+        mainItem,
+        false
+);
+
+mainItem.addView(view);
+    </code>
+    </div>
+            <div class="bg1 post">
+                <code class="java">
+List&lt;Person> persons = new ArrayList<>(List.of(
+        new Person("Amanda", R.drawable.woman0),
+        new Person("Beatriz", R.drawable.woman1),
+        new Person("Carla", R.drawable.woman2),
+        new Person("Fabiane", R.drawable.woman3),
+        new Person("Gabriela", R.drawable.woman4),
+        new Person("Helena", R.drawable.woman5),
+        new Person("Iana", R.drawable.woman6),
+        new Person("Joana", R.drawable.woman7),
+        new Person("Karla", R.drawable.woman8),
+        new Person("Larissa", R.drawable.woman9)
+));
+
+LinearLayout mainItem = findViewById(R.id.MainItem);
+
+for(Person p : persons){
+    View view = getLayoutInflater().inflate(
+            R.layout.activity_item_list,
+            findViewById(R.id.MainItem),
+            false
+    );
+
+    ImageView itemListImgPic = view.findViewById(R.id.ItemListImgPic);
+    TextView itemListTxtName = view.findViewById(R.id.ItemListTxtName);
+    TextView itemListStatus = view.findViewById(R.id.ItemListStatus);
+
+    itemListImgPic.setImageResource(p.image);
+    itemListTxtName.setText(p.name);
+    itemListStatus.setText("Está online");
+
+    mainItem.addView(view);
+}
+                </code>
+            </div>
+        </section>
+    </section>
+
+
+</main>

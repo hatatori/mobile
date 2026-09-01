@@ -40,12 +40,31 @@ imageView.setImageResource(R.drawable.outra_imagem);
 
 <section class="post bg1">
 <section>
-    <button class="choice-btn btn-selected">activity_main.xml</button>
+    <button class="choice-btn btn-selected">Card</button>
+    <button class="choice-btn">activity_main.xml</button>
     <button class="choice-btn">style.xml</button>
     <button class="choice-btn">Jetpack</button>
     <button class="choice-btn">Jetpack</button>
     <div class="bg1">
 <section class="choice choice-0">
+    <div>
+        <code class="xml">
+&lt;androidx.cardview.widget.CardView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp">
+
+    &lt;ImageView
+    android:id="@+id/ItemListImgPic"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:contentDescription="TODO"
+    android:src="@drawable/pic"
+    tools:ignore="ContentDescription,HardcodedText" />
+
+&lt;/androidx.cardview.widget.CardView>
+        </code>
+    </div>
         <div>
             <!-- bloco 1 -->
             <code class="xml">

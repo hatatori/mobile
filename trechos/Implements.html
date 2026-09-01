@@ -1,0 +1,51 @@
+<main class="post">
+    
+    <h1>Implements</h1>
+
+    <div class="bg1 post">
+        <code class="java">
+public interface GPS {
+    public void obterCoordenadas();
+    default public void obterCoordenadasAproximadas() {
+        System.out.println("Obtendo coordenadas aproximadas...");
+    }
+}
+        </code> 
+    </div>
+    <div class="bg1 post">
+        <code class="java">
+public interface Radio {
+    public void ligarRadio();
+    public void pararRadio();
+}
+        </code>
+       
+    </div>
+    <div class="bg1 post">
+         <code class="java">
+public class Smartphone implements GPS, Radio{
+    @Override
+    public void obterCoordenadas() {
+
+    }
+
+    @Override
+    public void ligarRadio() {
+
+    }
+
+    @Override
+    public void pararRadio() {
+
+    }
+}
+        </code>
+    </div>
+    <div class="bg1 post">
+<code class="java">
+Smartphone motoG = new Smartphone();
+motoG.obterCoordenadasAproximadas();
+</code>
+    </div>
+
+</main>
