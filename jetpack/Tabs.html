@@ -1,0 +1,38 @@
+<section class="post">
+
+    <h1>Tabs</h1>
+
+    <a target="_blank" href="https://m3.material.io/components/tabs">Tabs</a>
+
+    <div class="example-crop-image">
+        <img width="100%" src="./imgs/example_tabs.png">
+    </div>
+
+
+    <div class="bg1 post">
+        <code class="kotlin">
+var selectedTab by remember { mutableIntStateOf(0) }
+
+val tabs = listOf("Home", "Favorites", "Profile")
+
+Column {
+    PrimaryTabRow(selectedTabIndex = selectedTab) {
+        tabs.forEachIndexed { index, title ->
+            Tab(
+                selected = selectedTab == index,
+                onClick = { selectedTab = index },
+                text = { Text(title) }
+            )
+        }
+    }
+
+    when (selectedTab) {
+        0 -> HomeScreen()
+        1 -> FavoritesScreen()
+        2 -> ProfileScreen()
+    }
+}
+</code>
+    </div>
+
+</section>

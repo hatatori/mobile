@@ -1,0 +1,95 @@
+<section>
+
+<h1>TabLayout</h1>
+
+<section>
+    <button class="choice-btn btn-selected">activity_main</button>
+    <button class="choice-btn">MainActivity</button>
+    <button class="choice-btn">ViewPagerAdapter</button>
+    <section class="choice choice-0">
+        <div class="post bg1">
+            <code class="xml">
+&lt;LinearLayout >
+ 
+    &lt;com.google.android.material.tabs.TabLayout >
+
+        &lt;com.google.android.material.tabs.TabItem ...  />
+        &lt;com.google.android.material.tabs.TabItem ...  />
+        &lt;com.google.android.material.tabs.TabItem ...  />
+        
+    &lt;/com.google.android.material.tabs.TabLayout>
+
+    &lt;androidx.viewpager2.widget.ViewPager2  />
+
+&lt;/LinearLayout>
+</code>
+        </div>
+        <div class="post bg1"><code class="java">
+TabLayout tabLayout = findViewById(R.id.tabLayout);
+ViewPager2 viewPager = findViewById(R.id.viewPager);
+
+// tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
+// tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
+// tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
+
+ViewPagerAdapter adapter = new ViewPagerAdapter(this);
+viewPager.setAdapter(adapter);
+
+
+tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+    @Override
+    public void onTabSelected(TabLayout.Tab tab) {
+
+        switch (tab.getPosition()){
+            case 0: viewPager.setCurrentItem(0); break;
+            case 1: viewPager.setCurrentItem(1); break;
+            case 2: viewPager.setCurrentItem(2); break;
+        }
+    }
+
+    @Override
+    public void onTabUnselected(TabLayout.Tab tab) {
+    }
+
+    @Override
+    public void onTabReselected(TabLayout.Tab tab) {
+    }
+});
+</code></div>
+        <div class="post bg1"><code class="java">
+    public class ViewPagerAdapter extends FragmentStateAdapter {
+
+    public ViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+        super(fragmentActivity);
+    }
+
+    @Nullable
+    @Override
+    public Fragment createFragment(int position) {
+        switch (position){
+            case 0: return new Fragment1();
+            case 1: return new Fragment2();
+            case 2: return new Fragment3();
+        }
+        return null;
+    }
+
+    @Override
+    public int getItemCount() {
+        return 3;
+    }
+}
+</code></div>
+        
+
+
+
+    </section>
+    
+</section>
+
+
+
+
+
+</section>
