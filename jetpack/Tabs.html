@@ -9,7 +9,46 @@
     </div>
 
 
-    <div class="bg1 post">
+    <section>
+        <button class="choice-btn btn-selected">Exempo 1</button>
+        <button class="choice-btn">Exempo 2</button>
+        <button class="choice-btn">Exempo 3</button>
+        <section class="choice choice-0">
+            <div class="bg1 post">
+        <code class="kotlin">
+var selectedTab by remember { mutableStateOf(0) }
+
+Column {
+    PrimaryTabRow(selectedTabIndex = selectedTab) {
+
+        Tab(
+            selected = selectedTab == 0,
+            onClick = { selectedTab = 0 },
+            text = { Text("title A") }
+        )
+
+        Tab(
+            selected = selectedTab == 1,
+            onClick = { selectedTab = 1 },
+            text = { Text("title B") }
+        )
+
+        Tab(
+            selected = selectedTab == 2,
+            onClick = { selectedTab = 2 },
+            text = { Text("title C") }
+        )
+    }
+
+    when (selectedTab) {
+        0 -> HomeScreen()
+        1 -> FavoritesScreen()
+        2 -> ProfileScreen()
+    }
+}
+</code>
+    </div>
+            <div class="bg1 post">
         <code class="kotlin">
 var selectedTab by remember { mutableIntStateOf(0) }
 
@@ -34,5 +73,58 @@ Column {
 }
 </code>
     </div>
+            <div class="bg1 post">
+        <code class="kotlin">
+val pagerState = rememberPagerState(pageCount = { 3 })
+val scope = rememberCoroutineScope()
+
+val tabs = listOf(
+    "Home",
+    "Favoritos",
+    "Perfil"
+)
+
+Column {
+    TabRow(
+        selectedTabIndex = pagerState.currentPage
+    ) {
+        tabs.forEachIndexed { index, title ->
+            Tab(
+                selected = pagerState.currentPage == index,
+                onClick = {
+                    scope.launch {
+                        pagerState.animateScrollToPage(index)
+                    }
+                },
+                text = {
+                    Text(title)
+                }
+            )
+        }
+    }
+
+    HorizontalPager(
+        state = pagerState
+    ) { page ->
+
+        when (page) {
+            0 -> HomeScreen()
+            1 -> FavoritesScreen()
+            2 -> ProfileScreen()
+        }
+    }
+}
+</code>
+    </div>
+        </section>
+    </section>
+
+
+    
+
+
+    
+ 
+    
 
 </section>
