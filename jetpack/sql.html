@@ -1,0 +1,193 @@
+<main class="post">
+
+<div class="bg1 post">
+<code class="java">
+public class DatabaseHelper extends SQLiteOpenHelper {
+
+    private static final String DB_NAME = "app.db";
+    private static final int DB_VERSION = 1;
+
+    public DatabaseHelper(Context context) {
+        super(context, DB_NAME, null, DB_VERSION);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        db.execSQL(
+            "CREATE TABLE users (" +
+            "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "name TEXT NOT NULL, " +
+            "email TEXT NOT NULL)"
+        );
+    }
+
+    @Override
+    public void onUpgrade(
+            SQLiteDatabase db,
+            int oldVersion,
+            int newVersion
+    ) {
+        db.execSQL("DROP TABLE IF EXISTS users");
+        onCreate(db);
+    }
+
+    public void addUser(String name, String email) {
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("name", name);
+        values.put("email", email);
+
+        db.insert("users", null, values);
+    }
+
+    public ArrayList&lt;String> getUsers() {
+        ArrayList&lt;String> users = new ArrayList<>();
+
+        SQLiteDatabase db = getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(
+                "SELECT name, email FROM users",
+                null
+        );
+
+        while (cursor.moveToNext()) {
+            String name = cursor.getString(0);
+            String email = cursor.getString(1);
+
+            users.add(name + " - " + email);
+        }
+
+        cursor.close();
+
+        return users;
+    }
+}
+</code>
+</div>
+
+<div class="bg1 post">
+<code class="kotlin">
+class MainActivity : ComponentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val database = DatabaseHelper(this)
+
+        setContent {
+            var name by remember { mutableStateOf("") }
+            var email by remember { mutableStateOf("") }
+
+            var users by remember {
+                mutableStateOf(database.users)
+            }
+
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp)
+            ) {
+
+                OutlinedTextField(
+                    value = name,
+                    onValueChange = { name = it },
+                    label = { Text("Nome") }
+                )
+
+                OutlinedTextField(
+                    value = email,
+                    onValueChange = { email = it },
+                    label = { Text("Email") }
+                )
+
+                Button(
+                    onClick = {
+                        database.addUser(name, email)
+                        users = database.users
+
+                        name = ""
+                        email = ""
+                    }
+                ) {
+                    Text("Salvar")
+                }
+
+                LazyColumn {
+                    items(users) { user ->
+                        Text(
+                            text = user,
+                            modifier = Modifier.padding(8.dp)
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+</code>
+</div>
+
+<div class="bg1 post">
+<code class="kotlin">
+class MainActivity : ComponentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val database = DatabaseHelper(this)
+
+        setContent {
+            var name by remember { mutableStateOf("") }
+            var email by remember { mutableStateOf("") }
+
+            var users by remember {
+                mutableStateOf(database.users)
+            }
+
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp)
+            ) {
+
+                OutlinedTextField(
+                    value = name,
+                    onValueChange = { name = it },
+                    label = { Text("Nome") }
+                )
+
+                OutlinedTextField(
+                    value = email,
+                    onValueChange = { email = it },
+                    label = { Text("Email") }
+                )
+
+                Button(
+                    onClick = {
+                        database.addUser(name, email)
+                        users = database.users
+
+                        name = ""
+                        email = ""
+                    }
+                ) {
+                    Text("Salvar")
+                }
+
+                LazyColumn {
+                    items(users) { user ->
+                        Text(
+                            text = user,
+                            modifier = Modifier.padding(8.dp)
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+</code>
+</div>
+ 
+</main>
