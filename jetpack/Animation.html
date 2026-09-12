@@ -1,0 +1,75 @@
+<main>
+    
+<section>
+    <button class="choice-btn btn-selected">Exemplo 1</button>
+    <button class="choice-btn">Exemplo 2</button>
+    <button class="choice-btn">Exemplo 3</button>
+    <button class="choice-btn">Exemplo 4</button>
+    <section class="choice choice-0">
+        <div class="bg1">
+            <code class="kotlin">
+var isVisible by remember { mutableStateOf(true) }
+
+Button(onClick = { isVisible = !isVisible }) {
+ Text(text="Visibility")
+}
+
+if(isVisible){
+    Box(modifier = Modifier
+        .size(100.dp)
+        .background(Color.Green)
+    )
+}
+            </code>
+        </div>
+        <div class="bg1">
+            <code class="kotlin">var isVisible by remember { mutableStateOf(true) }
+
+Button(onClick = { isVisible = !isVisible }) {
+ Text(text="Visibility")
+}
+
+AnimatedVisibility(isVisible) {
+    Box(modifier = Modifier
+        .size(100.dp)
+        .background(Color.Green)
+    )
+}</code>
+        </div>
+        <div class="bg1">
+            <code class="kotlin">var isVisible by remember { mutableStateOf(true) }
+
+Button(onClick = { isVisible = !isVisible }) {
+ Text(text="Visibility")
+}
+
+AnimatedVisibility(
+    visible = isVisible,
+    enter = slideInVertically() + fadeIn(),
+    exit = slideOutHorizontally() + fadeOut()
+) {
+    Box(modifier = Modifier
+        .size(100.dp)
+        .background(Color.Green)
+    )
+}</code>
+        </div>
+        <div class="bg1">
+            <code class="kotlin">var isVisible by remember { mutableStateOf(true) }
+val squareSize by animateDpAsState( targetValue = if(isVisible) 50.dp else 100.dp )
+val radius by animateDpAsState( targetValue = if(isVisible) 0.dp else 300.dp )
+
+Button(onClick = { isVisible = !isVisible }) {
+ Text(text="Visibility")
+}
+
+Box(modifier = Modifier
+    .size(squareSize)
+    .clip(RoundedCornerShape(radius))
+    .background(Color.Magenta)
+)</code>
+        </div>
+    </section>
+</section>
+
+</main>
