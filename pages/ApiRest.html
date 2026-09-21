@@ -1,0 +1,89 @@
+<main class="post">
+    <h1>ApiRest</h1>
+
+    <section>
+        <button class="choice-btn">Main</button>
+        <button class="choice-btn btn-selected">Dependencies</button>
+        <button class="choice-btn">ApiService</button> 
+        <button class="choice-btn">RetrofitInstance</button>
+        <section class="choice choice-0">
+
+            <div class="bg1">
+                <code class="kotlin">
+val retrofit = RetrofitInstance.api
+
+var users by remember { mutableStateOf&lt;List&lt;User>>(emptyList()) }
+var error by remember { mutableStateOf&lt;String?>(null) }
+
+LaunchedEffect(Unit) {
+    try {
+        users = retrofit.getUsers()
+    } catch (e: Exception) {
+        error = e.message
+    }
+}
+
+Column {
+    if (error != null) {
+        Text(text = "Error: $error")
+    } else {
+        for (u in users) {
+            Text(text = u.name)
+        }
+    }
+}
+                </code>
+            </div>
+
+            <div>
+                <p>Dependência</p>
+                <div class="bg1">
+                    <code class="kotlin">
+implementation("com.squareup.retrofit2:retrofit:3.0.0")
+implementation("com.squareup.retrofit2:converter-gson:3.0.0")
+                </code>
+                </div>
+            </div>
+            <div>
+
+                <div class="bg1">
+                    <code class="kotlin">
+interface ApiService {
+    @GET("/users")
+    suspend fun getUsers(): List&lt;User>
+
+    @GET("/{id}")
+    suspend fun getUserById(@Path("id") id: String): User
+
+    @POST("/")
+    suspend fun createUser(@Body user: User): User
+
+    @PUT("/{id}")
+    suspend fun updateUser(@Path("id") id: String, @Body user: User): User
+
+    @DELETE("/{id}")
+    suspend fun deleteUser(@Path("id") id: String): User
+}
+                </code>
+                </div>
+            </div>
+          
+            <div>
+                <div class="bg1">
+                    <code class="kotlin">
+object RetrofitInstance {
+    val api: ApiService = Retrofit.Builder()
+        .baseUrl("https://688576f3f52d34140f69de3c.mockapi.io/users/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+        .create(ApiService::class.java)
+}
+                </code>
+                </div>
+            </div>
+            
+
+        </section>
+    </section>
+
+</main>

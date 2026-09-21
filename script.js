@@ -375,14 +375,14 @@ function RenderQuotes() {
 
 function ButtonsGreen() {
     /*
-        <section>
-            <button class="choice-btn btn-selected">JAVA</button>
-            <button class="choice-btn">KOTLIN</button>
-            <section class="choice choice-0">
-                <div>choice a</div>
-                <div>choice b</div>
-            </section>
-        </section>
+<section>
+    <button class="choice-btn btn-selected">JAVA</button>
+    <button class="choice-btn">KOTLIN</button>
+    <section class="choice choice-0">
+        <div>choice a</div>
+        <div>choice b</div>
+    </section>
+</section>
     */
     choiceBtn = Array.from(document.querySelectorAll(".choice-btn"))
 
