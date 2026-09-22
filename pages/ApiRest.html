@@ -73,7 +73,7 @@ interface ApiService {
                     <code class="kotlin">
 object RetrofitInstance {
     val api: ApiService = Retrofit.Builder()
-        .baseUrl("https://688576f3f52d34140f69de3c.mockapi.io/users/")
+        .baseUrl("https://SEU_ID.mockapi.io/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(ApiService::class.java)
