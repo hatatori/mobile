@@ -2,88 +2,102 @@
     <h1>ApiRest</h1>
 
     <section>
-        <button class="choice-btn btn-selected">Main</button>
-        <button class="choice-btn">Dependencies</button>
-        <button class="choice-btn">ApiService</button> 
-        <button class="choice-btn">RetrofitInstance</button>
-        <section class="choice choice-0">
+        <button class="choice-btn">dependencies</button>
+        <button class="choice-btn">User</button>
+        <button class="choice-btn">ApiService</button>
+        <button class="choice-btn">RetrofitClient </button>
+        <button class="choice-btn">main</button>
+        <button class="choice-btn btn-selected">main</button>
+        <section class="choice choice-5">
 
-            <div class="bg1">
+            <div class="bg1 post">
                 <code class="kotlin">
-val retrofit = RetrofitInstance.api
+implementation("com.squareup.retrofit2:retrofit:3.0.0")
+implementation("com.squareup.retrofit2:converter-gson:3.0.0") </code>
+            </div>
+            <div class="bg1 post">
+                <code class="kotlin">
+data class User(
+    val id: Int? = null,
+    val name: String? = null,
+    val email: String,
+    val message: String,
+){} </code>
+            </div>
+            <div class="bg1 post">
+                <code class="kotlin">
+interface ApiService {
+    @GET("users")
+    suspend fun getUsers(): List<User>
 
-var users by remember { mutableStateOf&lt;List&lt;User>>(emptyList()) }
-var error by remember { mutableStateOf&lt;String?>(null) }
-
-LaunchedEffect(Unit) {
-    try {
-        users = retrofit.getUsers()
-    } catch (e: Exception) {
-        error = e.message
+    @POST("users")
+    suspend fun addUser(@Body user: User): User
+} </code>
+            </div>
+            <div class="bg1 post">
+                <code class="kotlin">
+object RetrofitClient {
+    val api: ApiService by lazy {
+        Retrofit.Builder()
+            .baseUrl("https://SUA_API_DATABASE.mockapi.io/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(ApiService::class.java)
+    }
+} </code>
+            </div>
+            <div class="bg1 post">
+                <code class="kotlin">
+fun ApiGet(){
+    scope.launch {
+        val result = RetrofitClient.api.getUsers()
+        users.addAll(result)
     }
 }
 
-Column {
-    if (error != null) {
-        Text(text = "Error: $error")
-    } else {
-        for (u in users) {
-            Text(text = u.name)
+fun ApiPost(){
+    scope.launch {
+        val u = User(
+            name = "maria",
+            email = "maria@gmail.com",
+            message = "message maria",
+        )
+        RetrofitClient.api.addUser(u)
+    }
+} </code>
+            </div>
+            <div class="bg1 post">
+                <code class="kotlin">
+
+val users = remember { mutableStateListOf() }
+val scope = rememberCoroutineScope()
+        
+Column{
+    Button( onClick = { ApiGet() } ){ Text(text="GET") }
+    Button( onClick = { ApiPost() } ){ Text(text="POST") }
+
+    LazyColumn {
+        items(users) { user ->
+            Text(text = user.name ?: "")
         }
     }
-}
-                </code>
+} </code>
             </div>
-
-            <div>
-                <p>Dependência</p>
-                <div class="bg1">
-                    <code class="kotlin">
-implementation("com.squareup.retrofit2:retrofit:3.0.0")
-implementation("com.squareup.retrofit2:converter-gson:3.0.0")
-                </code>
-                </div>
-            </div>
-            <div>
-
-                <div class="bg1">
-                    <code class="kotlin">
-interface ApiService {
-    @GET("/users")
-    suspend fun getUsers(): List&lt;User>
-
-    @GET("/{id}")
-    suspend fun getUserById(@Path("id") id: String): User
-
-    @POST("/")
-    suspend fun createUser(@Body user: User): User
-
-    @PUT("/{id}")
-    suspend fun updateUser(@Path("id") id: String, @Body user: User): User
-
-    @DELETE("/{id}")
-    suspend fun deleteUser(@Path("id") id: String): User
-}
-                </code>
-                </div>
-            </div>
-          
-            <div>
-                <div class="bg1">
-                    <code class="kotlin">
-object RetrofitInstance {
-    val api: ApiService = Retrofit.Builder()
-        .baseUrl("https://SEU_ID.mockapi.io/")
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-        .create(ApiService::class.java)
-}
-                </code>
-                </div>
-            </div>
-            
 
         </section>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </main>
